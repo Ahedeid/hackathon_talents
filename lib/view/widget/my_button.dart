@@ -39,7 +39,7 @@ bool isBorder ;
         child: Text(
           title,
           style:  TextStyle(
-            fontSize: AppSizes.sizeTextMedium,
+            
             color: textColorIsWhite == true ?const Color(AppColor.whiteTextButtonColor) :  const Color(AppColor.primaryTextColor),
           ),
         ),

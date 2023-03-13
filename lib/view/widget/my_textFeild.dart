@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../utils/constant/colors_manger.dart';
 
-
-
-
 class MyTextField extends StatelessWidget {
   MyTextField({
     //required this.hintText,
@@ -17,14 +14,14 @@ class MyTextField extends StatelessWidget {
     this.width = double.infinity,
     this.vertical = 20,
     this.validator,
-     this.controller,
+    this.controller,
     required this.isIcon,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.maxLines = 1,
     Key? key,
   }) : super(key: key);
-int maxLines ;
- // final String hintText;
+  int maxLines;
+  // final String hintText;
   final bool obscureText;
   double bottomMargin;
   final TextInputType keyboardType;
@@ -45,34 +42,34 @@ int maxLines ;
       height: height,
       width: width,
       child: TextFormField(
-       // readOnly: true,
+        // readOnly: true,
         //enableInteractiveSelection: true,
-        maxLines:maxLines ,
+        maxLines: maxLines,
         minLines: 1,
         style: const TextStyle(color: Color(AppColor.borderColor)),
         onChanged: onChange as Function(String?)?,
         //   onSaved: onSaved as Function(String?)?,
-          controller: controller,
+        controller: controller,
         validator: validator as String? Function(String?)?,
         keyboardType: keyboardType,
         autovalidateMode: autovalidateMode,
         obscureText: obscureText,
         decoration: InputDecoration(
-        //  hintText: hintText,
+          //  hintText: hintText,
           errorStyle: const TextStyle(fontSize: 12, height: 0.3),
           hintStyle: const TextStyle(color: Color(AppColor.borderColor)),
           filled: true,
-          fillColor: const Color(AppColor.backGroundTextFieldColor),
           contentPadding:
               EdgeInsets.symmetric(horizontal: 34, vertical: vertical),
-          suffixIcon: isIcon== false ? Container() :const Icon(Icons.arrow_forward_ios),
+          suffixIcon: isIcon == false
+              ? Container()
+              : const Icon(Icons.arrow_forward_ios),
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5),
               borderSide: const BorderSide(
                 color: Color(AppColor.borderColor),
-              )
-          ),
-          focusedBorder:  OutlineInputBorder(
+              )),
+          focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(color: Color(AppColor.borderColor)),
           ),

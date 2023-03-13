@@ -1,0 +1,7 @@
+<svg id="warning" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path id="Path_395" data-name="Path 395" d="M25.891,23.475,19.255,36.4a1.7,1.7,0,0,0,0,1.536,1.345,1.345,0,0,0,1.182.768h13.27a1.346,1.346,0,0,0,1.182-.768,1.7,1.7,0,0,0,0-1.536L28.255,23.475a1.294,1.294,0,0,0-2.364,0Z" transform="translate(-19.072 -22.708)" fill="#ee404c"/>
+  <g id="Group_574" data-name="Group 574" transform="translate(7.143 4.755)">
+    <rect id="Rectangle_2438" data-name="Rectangle 2438" width="1.716" height="5.885" rx="0.858" transform="translate(0 0)" fill="#fff7ed"/>
+    <ellipse id="Ellipse_515" data-name="Ellipse 515" cx="0.858" cy="0.965" rx="0.858" ry="0.965" transform="translate(0 7.245)" fill="#fff7ed"/>
+  </g>
+</svg>

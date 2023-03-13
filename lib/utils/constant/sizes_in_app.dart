@@ -1,16 +1,15 @@
+class AppSizes {
+  static const double paddingVertival = 35;
+  static const double paddingHorizontal = 20;
+  static const double totalAmountNo = 30;
+  static const double amount = 25;
 
-
-class AppSizes{
-
-  static const double logoSizeLaunch = 200.0 ;
-  static const double paddingHorizontal = 24;
-  static const double sizeTextEmptyNote = 20;
-  static const double sizeTextPrimary = 40;
-  static const double sizeTextMedium = 16;
-  static const double sizeSubText = 24;
-  static const double hightAppBar = 80;
-  static const double sizeLogoAppBar = 40;
-
-
-
+  static const double textDefaultSize = 16;
+  static const double textLarge = 20;
+  static const double textSemiLarge = 20;
+  static const double textMedium = 15;
+  static const double textSmall = 14;
+  static const double textVerySmall = 13;
+  static const double textTiny = 12;
+  static const double textVeryTiny = 10;
 }

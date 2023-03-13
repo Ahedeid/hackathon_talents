@@ -53,7 +53,6 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                   Text(
                     widget.isEdit ? 'Edit Note' : ' Add Note',
                     style: const TextStyle(
-                      fontSize: AppSizes.sizeTextEmptyNote,
                       color: Color(AppColor.borderColor),
                     ),
                   ),
