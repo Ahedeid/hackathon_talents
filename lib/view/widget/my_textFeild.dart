@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
 import '../../utils/constant/colors_manger.dart';
+
+
 
 
 class MyTextField extends StatelessWidget {
   MyTextField({
-    required this.hintText,
+    //required this.hintText,
     required this.obscureText,
     required this.keyboardType,
     this.bottomMargin = 0,
     this.prefixIcon,
     this.onChange,
     //this.onSaved,
-    this.height = 65,
+    this.height = 65, // 44
     this.width = double.infinity,
     this.vertical = 20,
     this.validator,
      this.controller,
-    required this.icon,
+    required this.isIcon,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
+    this.maxLines = 1,
     Key? key,
   }) : super(key: key);
-
-  final String hintText;
+int maxLines ;
+ // final String hintText;
   final bool obscureText;
   double bottomMargin;
   final TextInputType keyboardType;
@@ -35,7 +36,7 @@ class MyTextField extends StatelessWidget {
   double height;
   double width;
   double vertical;
-  String icon;
+  bool isIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,11 @@ class MyTextField extends StatelessWidget {
       height: height,
       width: width,
       child: TextFormField(
-        style: const TextStyle(color: Color(AppColor.grayColor)),
+       // readOnly: true,
+        //enableInteractiveSelection: true,
+        maxLines:maxLines ,
+        minLines: 1,
+        style: const TextStyle(color: Color(AppColor.borderColor)),
         onChanged: onChange as Function(String?)?,
         //   onSaved: onSaved as Function(String?)?,
           controller: controller,
@@ -53,29 +58,28 @@ class MyTextField extends StatelessWidget {
         autovalidateMode: autovalidateMode,
         obscureText: obscureText,
         decoration: InputDecoration(
-          hintText: hintText,
+        //  hintText: hintText,
           errorStyle: const TextStyle(fontSize: 12, height: 0.3),
-          hintStyle: const TextStyle(color: Color(AppColor.grayColor)),
+          hintStyle: const TextStyle(color: Color(AppColor.borderColor)),
           filled: true,
           fillColor: const Color(AppColor.backGroundTextFieldColor),
           contentPadding:
               EdgeInsets.symmetric(horizontal: 34, vertical: vertical),
-          prefixIcon: SvgPicture.asset(
-            icon,
-            fit: BoxFit.scaleDown,
-          ),
+          suffixIcon: isIcon== false ? Container() :const Icon(Icons.arrow_forward_ios),
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide.none
+              borderRadius: BorderRadius.circular(5),
+              borderSide: const BorderSide(
+                color: Color(AppColor.borderColor),
+              )
           ),
           focusedBorder:  OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-        //    borderSide: const BorderSide(color: Color(AppColor.tealColor)),
+            borderRadius: BorderRadius.circular(5),
+            borderSide: const BorderSide(color: Color(AppColor.borderColor)),
           ),
-          errorBorder:  OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.red),
-          ),
+          // errorBorder:  OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(5),
+          //   borderSide: const BorderSide(color: Colors.red),
+          // ),
         ),
         //autofocus: true ,
       ),
