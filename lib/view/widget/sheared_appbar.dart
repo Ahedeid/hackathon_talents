@@ -33,7 +33,7 @@ class ShearedAppBar extends StatelessWidget with PreferredSizeWidget {
           child: IconButton(
             icon: const Icon(
               Icons.search,
-              color: Color(AppColor.tealColor),
+         //     color: Color(AppColor.tealColor),
             ),
             onPressed: ()=> AppRouter.goTo(screenName: ScreenName.searchScreen),
           ),
@@ -45,7 +45,7 @@ class ShearedAppBar extends StatelessWidget with PreferredSizeWidget {
           child: IconButton(
             icon: const Icon(
               Icons.favorite,
-              color: Color(AppColor.tealColor),
+             // color: Color(AppColor.tealColor),
             ),
             onPressed: ()=> AppRouter.goTo(screenName: ScreenName.favoriteScreen),
           ),
