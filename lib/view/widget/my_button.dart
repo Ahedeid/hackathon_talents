@@ -9,39 +9,54 @@ class MyButton extends StatelessWidget {
     this.onPressed,
     super.key,
     this.isBorder = false,
-    this.textColorIsWhite = true
+    this.textColorIsWhite = true,
+    this.width = double.infinity,
+    this.height = 45,
+    this.textColor = AppColor.whiteTextButtonColor ,
   });
 
   void Function()? onPressed;
-bool isBorder ;
+  bool isBorder;
+  double width;
   String title;
-  bool textColorIsWhite ;
+  bool textColorIsWhite;
+  double height;
+  int textColor ;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 45,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(7),
-        color: const Color(AppColor.primaryButtonColor),
-      ),
+    return SizedBox(
+      width: width,
+      height: height,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          side:isBorder == false ? BorderSide.none :const BorderSide(
-            color: Color(AppColor.borderColor),
-            width: 1
-          ),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(7) ),
+          side: isBorder == false
+              ? BorderSide.none
+              : const BorderSide(color: Color(AppColor.borderColor), width: 1),
+          backgroundColor: textColorIsWhite == true
+                 ? Colors.white
+                 : const Color(
+                     AppColor.primaryButtonColor,
+                   ),
+          elevation: 1,
         ),
-        child: Text(
-          title,
-          style:  TextStyle(
-            fontSize: AppSizes.sizeTextMedium,
-            color: textColorIsWhite == true ?const Color(AppColor.whiteTextButtonColor) :  const Color(AppColor.primaryTextColor),
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Icon(Icons.file_download,color:Color(AppColor.primaryButtonColor)),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: textColorIsWhite == true
+                    ? AppSizes.textSemiLarge
+                    : AppSizes.textDefaultSize,
+                color:  Color(textColor)
+                    // const Color(AppColor.primaryTextColor),
+              ),
+            ),
+          ],
         ),
       ),
     );

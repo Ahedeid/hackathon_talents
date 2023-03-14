@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_talents/routes/screen_name.dart';
+import 'package:hackathon_talents/view/screens/balance_screen.dart';
+
+import '../view/screens/withdraw_request.dart';
 
 
 class RouteGenerator {
@@ -6,12 +10,12 @@ class RouteGenerator {
     Widget result;
 
     switch (settings.name) {
-      // case ScreenName.launchScreen:
-      //   result = const LaunchScreen();
-      //   break;
-      // case ScreenName.homeScreen:
-      //   result = const HomeScreen();
-      //   break;
+      case ScreenName.balanceScreen:
+        result = const BalanceScreen();
+        break;
+      case ScreenName.withdrawRequestScreen:
+        result = const WithdrawRequestScreen();
+        break;
       //   case ScreenName.signInScreen:
       //   result = const SignInScreen();
       //   break;

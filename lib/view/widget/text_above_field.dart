@@ -19,7 +19,7 @@ class TextAndField extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Column(
       children: [
-         Text(title,style: const TextStyle(color: Color(AppColor.textAboveField)),),
+         Text(title,style: const TextStyle(color: Color(AppColor.textAboveFieldColor)),),
         const SizedBox(height: 5),
         MyTextField(obscureText: false, keyboardType: TextInputType.text, isIcon: isIcon,)
       ],

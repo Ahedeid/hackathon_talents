@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
-
-import '../../routes/app_router.dart';
-import '../../routes/screen_name.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hackathon_talents/routes/app_router.dart';
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/images_constant.dart';
 import '../../utils/constant/sizes_in_app.dart';
 
-
-
 class ShearedAppBar extends StatelessWidget with PreferredSizeWidget {
-  const ShearedAppBar({
+  ShearedAppBar({
     Key? key,
+    this.isImageTitle = false,
+    required this.title,
+    this.isNotification = false,
+    this.isBack = false ,
   }) : super(key: key);
+
+  bool isImageTitle;
+  String title;
+  bool isNotification;
+  bool isBack ;
 
   @override
   Widget build(BuildContext context) {
@@ -20,43 +26,39 @@ class ShearedAppBar extends StatelessWidget with PreferredSizeWidget {
       toolbarHeight: AppSizes.hightAppBar,
       backgroundColor: Colors.transparent,
       elevation: 0,
-      title: const Text(
-        'Notes',
-        style: TextStyle(
-            fontSize: AppSizes.sizeTextPrimary,
-            color: Color(AppColor.primaryTextColor)),
-      ),
+      centerTitle: true,
+      leading: isBack == true? IconButton(
+        icon: const Icon(
+          Icons.arrow_back_ios_new,
+          color: Color(AppColor.primaryTextColor),
+        ),
+        onPressed: () {
+          AppRouter.back();
+        },
+      ): Container(),
+      title: isImageTitle == false
+          ? Text(
+              title,
+              style: const TextStyle(
+                fontFamily: "Segoe UI",
+                fontWeight: FontWeight.bold,
+                fontSize: AppSizes.textLarge,
+                color: Color(
+                  AppColor.primaryTextColor,
+                ),
+              ),
+            )
+          : SvgPicture.asset(ImageConstant.logo),
       actions: [
-        CircleAvatar(
-          radius: 25,
-        //  backgroundColor: const Color(AppColor.backGroundSearchIconColor),
-          child: IconButton(
-            icon: const Icon(
-              Icons.search,
-         //     color: Color(AppColor.tealColor),
-            ),
-            onPressed: ()=> AppRouter.goTo(screenName: ScreenName.searchScreen),
-          ),
-        ),
-        const SizedBox(width: 10),
-        CircleAvatar(
-          radius: 25,
-       //   backgroundColor: const Color(AppColor.backGroundSearchIconColor),
-          child: IconButton(
-            icon: const Icon(
-              Icons.favorite,
-             // color: Color(AppColor.tealColor),
-            ),
-            onPressed: ()=> AppRouter.goTo(screenName: ScreenName.favoriteScreen),
-          ),
-        ),
-        const SizedBox(width: 10),
-        Image.asset(
-          ImageConstant.logo,
-          height: AppSizes.sizeLogoAppBar,
-          width: AppSizes.sizeLogoAppBar,
-        ),
-        const SizedBox(width: 10),
+        isNotification
+            ? IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.notifications_active,
+                  color: Color(AppColor.primaryTextColor),
+                ),
+              )
+            : Container(),
       ],
     );
   }
