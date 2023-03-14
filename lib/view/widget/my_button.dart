@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hackathon_talents/utils/constant/icons_constant.dart';
 
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
@@ -12,7 +14,7 @@ class MyButton extends StatelessWidget {
     this.textColorIsWhite = true,
     this.width = double.infinity,
     this.height = 45,
-    this.textColor = AppColor.whiteTextButtonColor ,
+    this.textColor = AppColor.whiteTextButtonColor,
   });
 
   void Function()? onPressed;
@@ -21,7 +23,7 @@ class MyButton extends StatelessWidget {
   String title;
   bool textColorIsWhite;
   double height;
-  int textColor ;
+  int textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -31,30 +33,35 @@ class MyButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(7) ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7)),
           side: isBorder == false
               ? BorderSide.none
               : const BorderSide(color: Color(AppColor.borderColor), width: 1),
           backgroundColor: textColorIsWhite == true
-                 ? Colors.white
-                 : const Color(
-                     AppColor.primaryButtonColor,
-                   ),
+              ? Colors.white
+              : const Color(
+                  AppColor.primaryButtonColor,
+                ),
           elevation: 1,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.file_download,color:Color(AppColor.primaryButtonColor)),
+            title == 'Withdraw'
+                ? SvgPicture.asset(IconsConstant.withdraw)
+                : Container(),
+            const SizedBox(
+              width: 8,
+            ),
             Text(
               title,
               style: TextStyle(
-                fontSize: textColorIsWhite == true
-                    ? AppSizes.textSemiLarge
-                    : AppSizes.textDefaultSize,
-                color:  Color(textColor)
-                    // const Color(AppColor.primaryTextColor),
-              ),
+                  fontSize: textColorIsWhite == true
+                      ? AppSizes.textSemiLarge
+                      : AppSizes.textDefaultSize,
+                  color: Color(textColor)
+                  // const Color(AppColor.primaryTextColor),
+                  ),
             ),
           ],
         ),

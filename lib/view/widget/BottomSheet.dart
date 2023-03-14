@@ -6,7 +6,6 @@ import 'package:hackathon_talents/utils/constant/icons_constant.dart';
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
 
-
 class ContentOfBottomSheet extends StatefulWidget {
   ContentOfBottomSheet({
     Key? key,
@@ -36,7 +35,7 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
               style: TextStyle(
                 fontFamily: 'Segoe UI',
                 fontSize: AppSizes.textLarge,
-                color: Color(AppColor.gray),
+                color: Color(AppColor.grey),
               ),
             ),
             const SizedBox(
@@ -55,7 +54,7 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                 AppRouter.goTo(screenName: ScreenName.withdrawRequestScreen);
               },
               child: Row(
-                children:  [
+                children: [
                   const Text(
                     'Bank',
                     style: TextStyle(
@@ -67,10 +66,10 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                   const SizedBox(
                     width: 30,
                   ),
-              SizedBox(
-                  height: 25,
-                  width: 25,
-                  child: SvgPicture.asset(IconsConstant.bank))
+                  SizedBox(
+                      height: 25,
+                      width: 25,
+                      child: SvgPicture.asset(IconsConstant.bank))
                 ],
               ),
             ),
@@ -82,7 +81,7 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                 AppRouter.goTo(screenName: ScreenName.withdrawRequestScreen);
               },
               child: Row(
-                children:  [
+                children: [
                   const Text(
                     'Cash',
                     style: TextStyle(
@@ -94,14 +93,14 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                   const SizedBox(
                     width: 30,
                   ),
-                SizedBox(
-                    height: 28,
-                    width: 28,
-                    child: SvgPicture.asset(IconsConstant.money))
+                  SizedBox(
+                      height: 28,
+                      width: 28,
+                      child: SvgPicture.asset(IconsConstant.money))
                 ],
               ),
             ),
-           /*  const SizedBox(
+            /*  const SizedBox(
               height: 10,
             ), */
           ],

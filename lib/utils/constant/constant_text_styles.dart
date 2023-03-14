@@ -12,11 +12,10 @@ class AppTextStyles {
       fontFamily: "Segoe UI",
       color: Color(AppColor.primaryTextColor),
       fontWeight: FontWeight.bold,
-      fontSize: AppSizes.textDefaultSize
-  );
+      fontSize: AppSizes.textDefaultSize);
   static TextStyle bodyText1 = const TextStyle(
       fontFamily: "Segoe UI",
-      color: Color(AppColor.gray),
+      color: Color(AppColor.grey),
       fontWeight: FontWeight.normal,
       fontSize: AppSizes.textSmall);
   static TextStyle appBarText = const TextStyle(

@@ -11,7 +11,7 @@ class WithdrawRequestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(title: 'Bank Withdraw', isBack: true),
+      appBar: SharedAppBar(title: 'Bank Withdraw', isBack: true),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -26,7 +26,7 @@ class WithdrawRequestScreen extends StatelessWidget {
                     fontSize: 30,
                     fontFamily: 'Segoe UI',
                     fontWeight: FontWeight.bold,
-                    color: Color(AppColor.gray)),
+                    color: Color(AppColor.grey)),
               ),
               const SizedBox(height: 10),
               const Text(
@@ -45,7 +45,7 @@ class WithdrawRequestScreen extends StatelessWidget {
                     text: 'Available  ',
                     style: TextStyle(
                         fontSize: AppSizes.textDefaultSize,
-                        color: Color(AppColor.gray)),
+                        color: Color(AppColor.grey)),
                     children: <InlineSpan>[
                       TextSpan(
                         text: '\$240.19',

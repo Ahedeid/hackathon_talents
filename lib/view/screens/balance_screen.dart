@@ -13,9 +13,10 @@ class BalanceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(title: 'Balance'),
+      appBar: SharedAppBar(title: 'Balance'),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppSizes.paddingHorizontal),
+        padding:
+            const EdgeInsets.symmetric(horizontal: AppSizes.paddingHorizontal),
         child: ListView(
           children: [
             Material(
@@ -24,15 +25,15 @@ class BalanceScreen extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 height: 85,
-                padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 12),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(7),
-                  border: Border.all(
-                    width: 0.5,
-                    color: const Color(AppColor.borderColor),
-                  )
-                ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(7),
+                    border: Border.all(
+                      width: 0.5,
+                      color: const Color(AppColor.borderColor),
+                    )),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -43,11 +44,10 @@ class BalanceScreen extends StatelessWidget {
                         Text(
                           'Current Balance',
                           style: TextStyle(
-                            fontSize: AppSizes.textDefaultSize,
-                            fontFamily: 'Segoe UI',
-                            fontWeight: FontWeight.normal,
-                            color: Color(AppColor.currentBalance)
-                          ),
+                              fontSize: AppSizes.textDefaultSize,
+                              fontFamily: 'Segoe UI',
+                              fontWeight: FontWeight.normal,
+                              color: Color(AppColor.currentBalance)),
                         ),
                         Text(
                           '\$250.00',
@@ -60,9 +60,13 @@ class BalanceScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    MyButton(title: 'Withdraw',width: 140,isBorder: true,textColorIsWhite: true,
+                    MyButton(
+                      title: 'Withdraw',
+                      width: 140,
+                      isBorder: true,
+                      textColorIsWhite: true,
                       textColor: AppColor.primaryButtonColor,
-                      onPressed: (){
+                      onPressed: () {
                         showModalBottomSheet(
                           shape: const OutlineInputBorder(
                               borderRadius: BorderRadius.only(
@@ -75,50 +79,73 @@ class BalanceScreen extends StatelessWidget {
                           isScrollControlled: true,
                           builder: (context) => SizedBox(
                             child: ContentOfBottomSheet(
-                              //midea: MediaQuery.of(context).size,
-                            ),
+                                //midea: MediaQuery.of(context).size,
+                                ),
                           ),
                         );
-                    },),
+                      },
+                    ),
                   ],
                 ),
               ),
             ),
             const SizedBox(height: 15),
-            const Text('Withdrawals',style:TextStyle(fontSize:17,fontWeight: FontWeight.w600,fontFamily: "Segoe UI" ),),
+            const Text(
+              'Withdrawals',
+              style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: "Segoe UI"),
+            ),
             const SizedBox(height: 15),
             Container(
-            
-              padding: const EdgeInsets.symmetric(horizontal: 17,vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 12),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(7),
                   border: Border.all(
                     width: 0.5,
                     color: const Color(AppColor.borderColor),
-                  )
-              ),
+                  )),
               child: ListView.separated(
-                
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 25,
-                separatorBuilder: (BuildContext context, int index) => const Divider(),
+                separatorBuilder: (BuildContext context, int index) =>
+                    const Divider(),
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    leading:Column(
+                    leading: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:  [
-                        Text('غزة - مكتب الدانا',style: AppTextStyles.deafultText,),
-                        Text('12:30 AM, 21 Aug',style: AppTextStyles.bodyText1,),
+                      children: [
+                        Text(
+                          'غزة - مكتب الدانا',
+                          style: AppTextStyles.deafultText,
+                        ),
+                        Text(
+                          '12:30 AM, 21 Aug',
+                          style: AppTextStyles.bodyText1,
+                        ),
                       ],
                     ),
                     trailing: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: const [
-                        Text('\$567',style: TextStyle(fontSize:16,fontWeight: FontWeight.bold,fontFamily: "Segoe UI" ),),
-                        Text('Pending',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "Segoe UI",color: Color(0xFFDAA545) ),),
+                        Text(
+                          '\$567',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Segoe UI"),
+                        ),
+                        Text(
+                          'Pending',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Segoe UI",
+                              color: Color(0xFFDAA545)),
+                        ),
                       ],
                     ),
                   );

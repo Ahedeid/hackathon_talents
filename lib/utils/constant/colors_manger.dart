@@ -12,10 +12,12 @@ class AppColor {
   static const int addBankAccount = 0xFF6492EE;
   static const int scaffoldBack = 0xFFF2F4F7;
   static const int currentBalance = 0xFFF505050;
-  static const int gray = 0xFFF8C8C8C;
+  static const int grey = 0xFFF8C8C8C;
   static const int subtext = 0xFFF000000B5;
   static const int redDelete = 0xFFFD84242;
   static const int green = 0xFFF70B668;
   static const int redWarning = 0xFFFEE404C;
   static const int backGroundBottomSheet = 0xFF505050;
+  static const int backGroundContainer = 0xffFFF9F0;
+  static const int borderContainer = 0xffF3F3F3;
 }

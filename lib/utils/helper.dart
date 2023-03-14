@@ -11,6 +11,7 @@ class UtilsConfig {
       duration: const Duration(seconds: 3),
       content: Text(message),
       elevation: 0,
+      behavior: SnackBarBehavior.fixed,
       backgroundColor: status ? Colors.green : Colors.black45,
     ));
   }
