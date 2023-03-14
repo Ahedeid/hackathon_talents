@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_talents/routes/screen_name.dart';
 import 'package:hackathon_talents/view/screens/balance_screen.dart';
+import 'package:hackathon_talents/view/screens/withdrawl_preview_screen.dart';
 
 import '../view/screens/withdraw_request.dart';
 
@@ -15,6 +16,9 @@ class RouteGenerator {
         break;
       case ScreenName.withdrawRequestScreen:
         result = const WithdrawRequestScreen();
+        break;
+      case ScreenName.withdrawalPreviewScreen:
+        result = const WithdrawlPrevviewScreen ();
         break;
       //   case ScreenName.signInScreen:
       //   result = const SignInScreen();

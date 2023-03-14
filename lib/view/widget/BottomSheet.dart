@@ -21,10 +21,10 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
   Widget build(BuildContext context) {
     var midea = MediaQuery.of(context).size;
     return SizedBox(
-      height: midea.height * 0.25,
+      height: midea.height * 0.28,
       child: Padding(
         padding: EdgeInsets.only(
-            left: 28,
+            left: 25,
             right: 24,
             top: 20,
             bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -101,9 +101,9 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                 ],
               ),
             ),
-            const SizedBox(
+           /*  const SizedBox(
               height: 10,
-            ),
+            ), */
           ],
         ),
       ),

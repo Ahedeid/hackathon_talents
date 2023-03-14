@@ -23,7 +23,7 @@ class HackathonTalents extends StatelessWidget {
       checkerboardOffscreenLayers: false,
       scaffoldMessengerKey: UtilsConfig.scaffoldKey,
       debugShowCheckedModeBanner: false,
-      initialRoute: ScreenName.balanceScreen,
+      initialRoute: ScreenName.withdrawalPreviewScreen,
       onGenerateRoute: RouteGenerator.onGenerateRoute,
       navigatorKey: AppRouter.navigatorKey,
     );

@@ -87,42 +87,42 @@ class BalanceScreen extends StatelessWidget {
             const SizedBox(height: 15),
             const Text('Withdrawals',style:TextStyle(fontSize:17,fontWeight: FontWeight.w600,fontFamily: "Segoe UI" ),),
             const SizedBox(height: 15),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 17,vertical: 12),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(7),
-                    border: Border.all(
-                      width: 0.5,
-                      color: const Color(AppColor.borderColor),
-                    )
-                ),
-                child: ListView.separated(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: 25,
-                  separatorBuilder: (BuildContext context, int index) => const Divider(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      leading:Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children:  [
-                          Text('غزة - مكتب الدانا',style: AppTextStyles.deafultText,),
-                          Text('12:30 AM, 21 Aug',style: AppTextStyles.bodyText1,),
-                        ],
-                      ),
-                      trailing: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: const [
-                          Text('\$567',style: TextStyle(fontSize:16,fontWeight: FontWeight.bold,fontFamily: "Segoe UI" ),),
-                          Text('Pending',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "Segoe UI",color: Color(0xFFDAA545) ),),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+            Container(
+            
+              padding: const EdgeInsets.symmetric(horizontal: 17,vertical: 12),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(7),
+                  border: Border.all(
+                    width: 0.5,
+                    color: const Color(AppColor.borderColor),
+                  )
+              ),
+              child: ListView.separated(
+                
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: 25,
+                separatorBuilder: (BuildContext context, int index) => const Divider(),
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    leading:Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children:  [
+                        Text('غزة - مكتب الدانا',style: AppTextStyles.deafultText,),
+                        Text('12:30 AM, 21 Aug',style: AppTextStyles.bodyText1,),
+                      ],
+                    ),
+                    trailing: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: const [
+                        Text('\$567',style: TextStyle(fontSize:16,fontWeight: FontWeight.bold,fontFamily: "Segoe UI" ),),
+                        Text('Pending',style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "Segoe UI",color: Color(0xFFDAA545) ),),
+                      ],
+                    ),
+                  );
+                },
               ),
             )
           ],

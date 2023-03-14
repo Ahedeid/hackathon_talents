@@ -13,14 +13,14 @@ class AppStrings {
       "Wait for the payment to be ready within 24 hours.";
   static const centsError = "Sorry, cents can't be withdrawn for cash payout.";
   static const transferPreviewInstructions = [
-    "Don't go to office till the payment ready."
-        "All transfers are subject to review and could be delayed or stopped if we identify an issue."
+    "- Don't go to office till the payment ready.",
+    "- All transfers are subject to review and could be delayed or stopped if we identify an issue."
   ];
   static const withdrawPreview =
       "- Transfers made after 9:00 PM or on weekends takes longer.\n - All transfers are subject to review and could be delayed or stopped if we identify an issue.";
   static const withdrawlInstructions = [
-    "Open your bank account app to ensure payment delivery",
-    "Avoid opening support ticket before expected date",
-    "Confirm receiving your payment"
+    "- Open your bank account app to ensure payment delivery",
+    "- Avoid opening support ticket before expected date",
+    "- Confirm receiving your payment"
   ];
 }
