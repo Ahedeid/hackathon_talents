@@ -18,21 +18,22 @@ class AddBankAccount extends StatefulWidget {
 }
 
 class _AddBankAccountState extends State<AddBankAccount> {
- // TextEditingController? accountNumberController = TextEditingController();
+  TextEditingController? accountNumberController = TextEditingController();
 
- // TextEditingController? nameController = TextEditingController();
- // @override
- // void dispose() {
- //   // TODO: implement dispose
- //   super.dispose();
+  TextEditingController? nameController = TextEditingController();
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
 
- //   accountNumberController?.dispose();
- //   nameController!.dispose();
- // }
+    accountNumberController?.dispose();
+    nameController!.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: ShearedAppBar(title: 'Add Bank Account', isBack: true),
       body: Padding(
         padding: EdgeInsets.only(
@@ -47,7 +48,7 @@ class _AddBankAccountState extends State<AddBankAccount> {
               const SizedBox(height: 15),
               TextAndField(
                 title: 'Account Owner Full Name',
-             //   controller: nameController,
+                controller: nameController,
               ),
               const SizedBox(height: 15),
               TextAndEmptyField(
@@ -85,7 +86,7 @@ class _AddBankAccountState extends State<AddBankAccount> {
               const SizedBox(height: 15),
               TextAndField(
                 title: 'Account Number',
-              //  controller: accountNumberController,
+                controller: accountNumberController,
               ),
               const SizedBox(height: 15),
               TextAndField(title: 'Currency'),
@@ -130,7 +131,7 @@ class _AddBankAccountState extends State<AddBankAccount> {
               MyButton(
                   title: 'Continue',
                   onPressed: () {
-                    // Provider.of<AddBankService>(context).addNote(nameController!.text, accountNumberController!.text);
+                     Provider.of<AddBankService>(context,listen: false).addNote(nameController!.text, accountNumberController!.text);
                     AppRouter.goTo(screenName: ScreenName.oTTPScreen);
                   },
                   textColorIsWhite: false),

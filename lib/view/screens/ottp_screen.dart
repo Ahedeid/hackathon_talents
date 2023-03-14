@@ -85,7 +85,7 @@ class OTTPScreen extends StatelessWidget {
                 MyButton(
                   title: 'Verify',
                   onPressed: () {
-                    AppRouter.removeAllBack(screenName: ScreenName.addBankScreen);
+                    AppRouter.goToAndRemove(screenName: ScreenName.addBankScreen);
                   },
                   textColorIsWhite: false,
                 )

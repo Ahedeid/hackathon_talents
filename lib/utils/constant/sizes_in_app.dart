@@ -6,6 +6,7 @@ class AppSizes{
   static const double paddingHorizontal = 20;
   static const double totalAmountNo = 30;
   static const double amount = 25;
+  static const double varyLarge = 23;
   static const double textDefaultSize = 16;
   static const double textLarge = 20;
   static const double textSemiLarge = 18;

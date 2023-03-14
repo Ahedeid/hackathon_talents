@@ -18,17 +18,20 @@ class HackathonTalents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(AppColor.scaffoldBack),
+    return ChangeNotifierProvider(
+      create: (context) => AddBankService(),
+      child: MaterialApp(
+        theme: ThemeData(
+          scaffoldBackgroundColor: const Color(AppColor.scaffoldBack),
+        ),
+        title: 'HackathonTalents',
+        checkerboardOffscreenLayers: false,
+        scaffoldMessengerKey: UtilsConfig.scaffoldKey,
+        debugShowCheckedModeBanner: false,
+        initialRoute: ScreenName.balanceScreen,
+        onGenerateRoute: RouteGenerator.onGenerateRoute,
+        navigatorKey: AppRouter.navigatorKey,
       ),
-      title: 'HackathonTalents',
-      checkerboardOffscreenLayers: false,
-      scaffoldMessengerKey: UtilsConfig.scaffoldKey,
-      debugShowCheckedModeBanner: false,
-      initialRoute: ScreenName.balanceScreen,
-      onGenerateRoute: RouteGenerator.onGenerateRoute,
-      navigatorKey: AppRouter.navigatorKey,
     );
   }
 }

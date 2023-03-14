@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/routes/screen_name.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
-
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
 import '../widget/sheared_appbar.dart';
@@ -25,10 +24,11 @@ class WithdrawRequestScreen extends StatelessWidget {
               const Text(
                 'Amount',
                 style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: 'Segoe UI',
-                    fontWeight: FontWeight.bold,
-                    color: Color(AppColor.gray)),
+                  fontSize: 30,
+                  fontFamily: 'Segoe UI',
+                  fontWeight: FontWeight.bold,
+                  color: Color(AppColor.gray),
+                ),
               ),
               const SizedBox(height: 10),
               TextFormField(
@@ -42,9 +42,9 @@ class WithdrawRequestScreen extends StatelessWidget {
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(borderSide: BorderSide.none),
-                  hintText: '0.00',
+                  hintText: '\$0.00',
                   errorStyle: TextStyle(fontSize: 12, height: 0.3),
-                  prefixText: '\$',
+               //   prefixText: '\$',
                   hintStyle: TextStyle(
                       color: Color(AppColor.gray),
                       fontWeight: FontWeight.bold,

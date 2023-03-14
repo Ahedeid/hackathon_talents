@@ -16,7 +16,7 @@ class AddBankService extends ChangeNotifier{
 
   final List<BankModel> _bankList =  <BankModel>[];
 
-  List<BankModel> get getNote {
+  List<BankModel> get getBank {
     //   if(_note.isEmpty){
     //     setLoading(true);
     //   }else {

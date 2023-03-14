@@ -3,10 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/routes/screen_name.dart';
 import 'package:hackathon_talents/utils/constant/icons_constant.dart';
-import 'package:hackathon_talents/view/screens/add_bank_account.dart';
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
-
 
 class ContentOfBottomSheet extends StatefulWidget {
   const ContentOfBottomSheet({
@@ -24,7 +22,7 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
     return SizedBox(
       height: midea.height * 0.25,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -52,7 +50,7 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                 AppRouter.goTo(screenName: ScreenName.withdrawRequestScreen);
               },
               child: Row(
-                children:  [
+                children: [
                   const Text(
                     'Bank',
                     style: TextStyle(
@@ -64,10 +62,10 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                   const SizedBox(
                     width: 30,
                   ),
-              SizedBox(
-                  height: 25,
-                  width: 25,
-                  child: SvgPicture.asset(IconsConstant.bank))
+                  SizedBox(
+                      height: 25,
+                      width: 25,
+                      child: SvgPicture.asset(IconsConstant.bank))
                 ],
               ),
             ),
@@ -76,10 +74,10 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
             ),
             InkWell(
               onTap: () {
-              //  AppRouter.goTo(screenName: ScreenName.addBankScreen);
+                //  AppRouter.goTo(screenName: ScreenName.addBankScreen);
               },
               child: Row(
-                children:  [
+                children: [
                   const Text(
                     'Cash',
                     style: TextStyle(
@@ -91,10 +89,11 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                   const SizedBox(
                     width: 30,
                   ),
-                SizedBox(
+                  SizedBox(
                     height: 28,
                     width: 28,
-                    child: SvgPicture.asset(IconsConstant.money))
+                    child: SvgPicture.asset(IconsConstant.money),
+                  ),
                 ],
               ),
             ),
