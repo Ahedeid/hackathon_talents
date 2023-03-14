@@ -8,6 +8,7 @@ class UtilsConfig {
 
   static showSnackBarMessage({required String message, required bool status}) {
     return scaffoldKey.currentState!.showSnackBar(SnackBar(
+      behavior: SnackBarBehavior.fixed,
       duration: const Duration(seconds: 3),
       content: Text(message),
       elevation: 0,

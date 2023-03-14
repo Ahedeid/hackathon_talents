@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_talents/routes/app_router.dart';
+import 'package:hackathon_talents/routes/screen_name.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
 
 import '../../utils/constant/colors_manger.dart';
@@ -29,13 +31,27 @@ class WithdrawRequestScreen extends StatelessWidget {
                     color: Color(AppColor.gray)),
               ),
               const SizedBox(height: 10),
-              const Text(
-                '\$300.00',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontFamily: 'Segoe UI',
+              TextFormField(
+                textAlignVertical: TextAlignVertical.center,
+                textAlign: TextAlign.center,
+                showCursor: false,
+                style: const TextStyle(
+                    color: Color(AppColor.primaryTextColor),
                     fontWeight: FontWeight.bold,
-                    color: Color(AppColor.primaryTextColor)),
+                    fontSize: AppSizes.totalAmountNo),
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(borderSide: BorderSide.none),
+                  hintText: '0.00',
+                  errorStyle: TextStyle(fontSize: 12, height: 0.3),
+                  prefixText: '\$',
+                  hintStyle: TextStyle(
+                      color: Color(AppColor.gray),
+                      fontWeight: FontWeight.bold,
+                      fontSize: AppSizes.totalAmountNo),
+                  contentPadding: EdgeInsets.symmetric(),
+                ),
+                autofocus: true,
               ),
               const SizedBox(height: 18),
               InkWell(
@@ -57,18 +73,20 @@ class WithdrawRequestScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.1,
-              ),
             ],
           ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 32),
         child: MyButton(
-            title: 'Continue', onPressed: () {}, textColorIsWhite: false),
+          title: 'Continue',
+          onPressed: () {
+            AppRouter.goTo(screenName: ScreenName.addBankScreen);
+          },
+          textColorIsWhite: false,
+        ),
       ),
     );
   }

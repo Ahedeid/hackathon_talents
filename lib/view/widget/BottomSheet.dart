@@ -3,12 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/routes/screen_name.dart';
 import 'package:hackathon_talents/utils/constant/icons_constant.dart';
+import 'package:hackathon_talents/view/screens/add_bank_account.dart';
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
 
 
 class ContentOfBottomSheet extends StatefulWidget {
-  ContentOfBottomSheet({
+  const ContentOfBottomSheet({
     Key? key,
   }) : super(key: key);
 
@@ -23,16 +24,12 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
     return SizedBox(
       height: midea.height * 0.25,
       child: Padding(
-        padding: EdgeInsets.only(
-            left: 28,
-            right: 24,
-            top: 20,
-            bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Choose Payment Method',
+              'Payment Method',
               style: TextStyle(
                 fontFamily: 'Segoe UI',
                 fontSize: AppSizes.textLarge,
@@ -79,7 +76,7 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
             ),
             InkWell(
               onTap: () {
-                AppRouter.goTo(screenName: ScreenName.withdrawRequestScreen);
+              //  AppRouter.goTo(screenName: ScreenName.addBankScreen);
               },
               child: Row(
                 children:  [
@@ -100,9 +97,6 @@ class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
                     child: SvgPicture.asset(IconsConstant.money))
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 10,
             ),
           ],
         ),

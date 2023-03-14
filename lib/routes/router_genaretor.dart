@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_talents/routes/screen_name.dart';
+import 'package:hackathon_talents/view/screens/add_bank_account.dart';
 import 'package:hackathon_talents/view/screens/balance_screen.dart';
 
+import '../view/screens/add_bank.dart';
+import '../view/screens/ottp_screen.dart';
 import '../view/screens/withdraw_request.dart';
 
 
@@ -16,15 +19,15 @@ class RouteGenerator {
       case ScreenName.withdrawRequestScreen:
         result = const WithdrawRequestScreen();
         break;
-      //   case ScreenName.signInScreen:
-      //   result = const SignInScreen();
-      //   break;
-      //   case ScreenName.signUpScreen:
-      //   result = const SignUpScreen();
-      //   break;
-      //   case ScreenName.searchScreen:
-      //   result = const SearchScreen();
-      //   break;
+        case ScreenName.addBankScreen:
+        result = const AddBankScreen();
+        break;
+        case ScreenName.addBankAccount:
+        result =  AddBankAccount();
+        break;
+        case ScreenName.oTTPScreen:
+        result = const OTTPScreen();
+        break;
       //   case ScreenName.favoriteScreen:
       //   result = const FavoriteScreen();
       //   break;

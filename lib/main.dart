@@ -4,6 +4,9 @@ import 'package:hackathon_talents/routes/router_genaretor.dart';
 import 'package:hackathon_talents/routes/screen_name.dart';
 import 'package:hackathon_talents/utils/constant/colors_manger.dart';
 import 'package:hackathon_talents/utils/helper.dart';
+import 'package:provider/provider.dart';
+
+import 'logics/provider/banck_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -9,7 +9,7 @@ class ShearedAppBar extends StatelessWidget with PreferredSizeWidget {
   ShearedAppBar({
     Key? key,
     this.isImageTitle = false,
-    required this.title,
+     this.title = '',
     this.isNotification = false,
     this.isBack = false ,
   }) : super(key: key);
@@ -27,15 +27,15 @@ class ShearedAppBar extends StatelessWidget with PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
-      leading: isBack == true? IconButton(
+      leading: isBack == true? AppRouter.mayBack() == false?IconButton(
         icon: const Icon(
           Icons.arrow_back_ios_new,
           color: Color(AppColor.primaryTextColor),
         ),
         onPressed: () {
-          AppRouter.back();
+          AppRouter.mayBack();
         },
-      ): Container(),
+      ): Container(): Container(),
       title: isImageTitle == false
           ? Text(
               title,
@@ -48,7 +48,7 @@ class ShearedAppBar extends StatelessWidget with PreferredSizeWidget {
                 ),
               ),
             )
-          : SvgPicture.asset(ImageConstant.logo),
+          : Image.asset(ImageConstant.logo,width:85 ,height: 25,),
       actions: [
         isNotification
             ? IconButton(

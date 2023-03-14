@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hackathon_talents/utils/constant/icons_constant.dart';
 
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
@@ -43,9 +45,10 @@ class MyButton extends StatelessWidget {
           elevation: 1,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.file_download,color:Color(AppColor.primaryButtonColor)),
+            title == 'Withdraw'?  SvgPicture.asset(IconsConstant.withdraw):Container(),
+            const SizedBox(width: 8,),
             Text(
               title,
               style: TextStyle(
