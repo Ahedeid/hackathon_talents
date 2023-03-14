@@ -11,8 +11,8 @@ import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
 import '../widget/sheared_appbar.dart';
 
-class WithdrawlPrevviewScreen extends StatelessWidget {
-  const WithdrawlPrevviewScreen({Key? key}) : super(key: key);
+class WithdrawlCashScreen extends StatelessWidget {
+  const WithdrawlCashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,27 +23,25 @@ class WithdrawlPrevviewScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: ListView(
             children: [
-             const Center(
-                child:  Text(
+              const Center(
+                child: Text(
                   'Amount',
                   style: TextStyle(
                       fontSize: 16,
-                     
                       fontWeight: FontWeight.bold,
                       color: Color(AppColor.grey)),
                 ),
               ),
               const SizedBox(height: 10),
-               const Center(
-                 child: Text(
+              const Center(
+                child: Text(
                   '300.00 USD',
                   style: TextStyle(
                       fontSize: 25,
-                      
                       fontWeight: FontWeight.bold,
                       color: Color(AppColor.mainBlue)),
-                             ),
-               ),
+                ),
+              ),
               const SizedBox(height: 18),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,32 +72,30 @@ class WithdrawlPrevviewScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SvgPicture.asset(IconsConstant.bank),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundColor: const Color(AppColor.scaffoldBack),
+                      child: SvgPicture.asset(
+                        IconsConstant.location,
+                        height: 30,
+                        width: 20,
+                      ),
+                    ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Row(
-                          children: const [
-                            Text(
-                              "Safa Mousa",
-                              style: TextStyle(
-                                fontSize: AppSizes.textDefaultSize,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              "[Bank Of Palestine]",
-                              style: TextStyle(color: Color(AppColor.grey)),
-                            )
-                          ],
-                        ),
-                        const Text(
-                          "0452-1064559-001-3100-000",
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "غزة - مكتب الدانا",
                           style: TextStyle(
-                              color: Color(AppColor.grey),
-                              fontSize: AppSizes.textTiny),
+                            fontSize: AppSizes.textDefaultSize,
+                          ),
+                        ),
+                        Text(
+                          "الرمال - مفترق شارع فلسطين مع الشهداء",
+                          style: TextStyle(
+                              color: Color(AppColor.primaryTextColor),
+                              fontSize: AppSizes.textMedium),
                         )
                       ],
                     )
@@ -114,7 +110,7 @@ class WithdrawlPrevviewScreen extends StatelessWidget {
                         width: .5,
                         color: const Color(AppColor.borderColorUnSelected)),
                     borderRadius: BorderRadius.circular(7)),
-                height: 128,
+                height: 150,
                 width: 350,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -123,16 +119,48 @@ class WithdrawlPrevviewScreen extends StatelessWidget {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [Text("Transfer amount"), Text("\$300 ")],
+                      children: const [
+                        Text(
+                          "Recipients name",
+                          style: TextStyle(fontSize: AppSizes.textDefaultSize),
+                        ),
+                        Text("محمد خلف ")
+                      ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [Text("Fee"), Text("Free ")],
+                      children: const [
+                        Text("Transfer amount",
+                            style:
+                                TextStyle(fontSize: AppSizes.textDefaultSize)),
+                        Text("\$300 ",
+                            style:
+                                TextStyle(fontSize: AppSizes.textDefaultSize))
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text("Fee",
+                            style:
+                                TextStyle(fontSize: AppSizes.textDefaultSize)),
+                        Text("Free ",
+                            style:
+                                TextStyle(fontSize: AppSizes.textDefaultSize))
+                      ],
                     ),
                     const Divider(color: Colors.grey, height: 1),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [Text("You'll get"), Text("\$300 ")],
+                      children: const [
+                        Text("You'll get",
+                            style:
+                                TextStyle(fontSize: AppSizes.textDefaultSize)),
+                        Text("\$300 ",
+                            style: TextStyle(
+                                fontSize: AppSizes.textDefaultSize,
+                                fontWeight: FontWeight.w700))
+                      ],
                     ),
                   ],
                 ),
@@ -170,7 +198,10 @@ class WithdrawlPrevviewScreen extends StatelessWidget {
                 isBorder: true,
                 textColorIsWhite: false,
                 textColor: AppColor.backGroundTextFieldColor,
-              )
+              ),
+              const SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),

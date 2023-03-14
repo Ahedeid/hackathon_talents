@@ -17,13 +17,13 @@ class HackathonTalents extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(AppColor.scaffoldBack),
-      ),
+          scaffoldBackgroundColor: const Color(AppColor.scaffoldBack),
+          fontFamily: "Segoe UI"),
       title: 'HackathonTalents',
       checkerboardOffscreenLayers: false,
       scaffoldMessengerKey: UtilsConfig.scaffoldKey,
       debugShowCheckedModeBanner: false,
-      initialRoute: ScreenName.cashScreen,
+      initialRoute: ScreenName.withdrawalCashScreen,
       onGenerateRoute: RouteGenerator.onGenerateRoute,
       navigatorKey: AppRouter.navigatorKey,
     );

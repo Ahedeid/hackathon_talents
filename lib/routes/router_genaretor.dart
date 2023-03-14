@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_talents/routes/screen_name.dart';
+import 'package:hackathon_talents/view/screens/add_recepient.dart';
 import 'package:hackathon_talents/view/screens/balance_screen.dart';
 import 'package:hackathon_talents/view/screens/cash_screen.dart';
+import 'package:hackathon_talents/view/screens/edit_recepient.dart';
+import 'package:hackathon_talents/view/screens/withdraw_cash_screen.dart';
 import 'package:hackathon_talents/view/screens/withdrawl.dart';
 import 'package:hackathon_talents/view/screens/withdrawl_preview_screen.dart';
 
+import '../view/screens/recpients_screen.dart';
 import '../view/screens/withdraw_request.dart';
 
 class RouteGenerator {
@@ -26,6 +30,18 @@ class RouteGenerator {
         break;
       case ScreenName.cashScreen:
         result = const CashScreen();
+        break;
+      case ScreenName.addRecepientScreen:
+        result = const AddRecepientScreen();
+        break;
+      case ScreenName.editRecepientScreen:
+        result = const EditRecepientScreen();
+        break;
+      case ScreenName.recepientsScreen:
+        result = const RecipientsScreen();
+        break;
+      case ScreenName.withdrawalCashScreen:
+        result = const WithdrawlCashScreen();
         break;
       //   case ScreenName.signInScreen:
       //   result = const SignInScreen();
