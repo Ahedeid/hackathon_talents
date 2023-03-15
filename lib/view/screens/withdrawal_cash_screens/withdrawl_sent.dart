@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hackathon_talents/utils/constant/strings_in_app.dart';
+import 'package:hackathon_talents/utils/constant/colors_manger.dart';
+import 'package:hackathon_talents/utils/constant/icons_constant.dart';
+import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
 import 'package:hackathon_talents/view/widget/sheared_appbar.dart';
 
-import '../../utils/constant/colors_manger.dart';
-import '../../utils/constant/icons_constant.dart';
-import '../../utils/constant/sizes_in_app.dart';
 
-class Withdrawal extends StatelessWidget {
-  const Withdrawal({super.key});
+
+class WithdrawalSentCash extends StatelessWidget {
+  const WithdrawalSentCash({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SharedAppBar(
-        title: "Withdrawl",
+        title: "Withdrawal",
         isNotification: true,
         isBack: true,
       ),
@@ -67,9 +67,9 @@ class Withdrawal extends StatelessWidget {
                                     const Color(AppColor.backGroundContainer),
                                 borderRadius: BorderRadius.circular(30)),
                             child: const Text(
-                              "Pending",
+                              "Sent",
                               style:
-                                  TextStyle(color: Color(AppColor.pendColor)),
+                                  TextStyle(color: Color(AppColor.sentColor),fontWeight: FontWeight.w700),
                             ),
                           ),
                         )
@@ -83,6 +83,7 @@ class Withdrawal extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Row(
@@ -223,45 +224,39 @@ class Withdrawal extends StatelessWidget {
                 height: 40,
               ),
               Container(
-                padding: const EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(top: 12),
                 decoration: BoxDecoration(
                     color: const Color(AppColor.backGroundTextFieldColor),
                     border: Border.all(
                         width: .5,
                         color: const Color(AppColor.borderColorUnSelected)),
                     borderRadius: BorderRadius.circular(7)),
-                height: 180,
+                height: 75,
                 width: 350,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Instructions',
-                      style: TextStyle(fontSize: AppSizes.textDefaultSize),
+                      'Transfer Screenshot',
+                      style: TextStyle(
+                          fontSize: AppSizes.textDefaultSize,
+                          fontWeight: FontWeight.w700),
                     ),
-                    ...List.generate(
-                        AppStrings.withdrawlInstructions.length,
-                        (index) => Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: 7,
-                                    width: 7,
-                                    decoration: const BoxDecoration(
-                                        color: Colors.black,
-                                        shape: BoxShape.circle),
-                                  ),
-                                  Text(
-                                    AppStrings.withdrawlInstructions[index],
-                                    style: const TextStyle(
-                                        fontSize: AppSizes.textVerySmall),
-                                  ),
-                                ],
-                              ),
-                            ))
+                    const SizedBox(height: 12,),
+                    Row(
+                      children:const [
+                         Text(
+                          "Sent by",
+                          style: TextStyle(fontSize: 13, color: Colors.grey),
+                        ),
+                         SizedBox(width: 12,),
+                         Text(
+                          "Omar Ziara",
+                          style: TextStyle(fontSize: 13, color: Colors.black),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -271,7 +266,7 @@ class Withdrawal extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: MyButton(
-                  title: "Cancel Withdrawal",
+                  title: "Confirm Recipit",
                   onPressed: () {},
                   width: 350,
                   height: 45,

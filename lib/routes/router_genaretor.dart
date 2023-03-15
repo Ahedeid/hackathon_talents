@@ -4,9 +4,17 @@ import 'package:hackathon_talents/view/screens/add_recepient.dart';
 import 'package:hackathon_talents/view/screens/balance_screen.dart';
 import 'package:hackathon_talents/view/screens/cash_screen.dart';
 import 'package:hackathon_talents/view/screens/edit_recepient.dart';
-import 'package:hackathon_talents/view/screens/withdraw_cash_screen.dart';
-import 'package:hackathon_talents/view/screens/withdrawl.dart';
-import 'package:hackathon_talents/view/screens/withdrawl_preview_screen.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_cash_screens/withdraw_cash_screen.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_bank_screens/withdrawal_canceled.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_bank_screens/withdrawal_completed.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_bank_screens/withdrawl.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_bank_screens/withdrawl_sent.dart';
+
+import 'package:hackathon_talents/view/screens/withdrawal_bank_screens/withdrawl_preview_screen.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_cash_screens/withdrawal_canceled.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_cash_screens/withdrawal_completed.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_cash_screens/withdrawal_ready.dart';
+import 'package:hackathon_talents/view/screens/withdrawal_cash_screens/withdrawl_pend.dart';
 
 import '../view/screens/recpients_screen.dart';
 import '../view/screens/withdraw_request.dart';
@@ -25,8 +33,8 @@ class RouteGenerator {
       case ScreenName.withdrawalPreviewScreen:
         result = const WithdrawlPrevviewScreen();
         break;
-      case ScreenName.withdrawalScreen:
-        result = const Withdrawal();
+      case ScreenName.withdrawalBankScreen:
+        result = const WithdrawalBank();
         break;
       case ScreenName.cashScreen:
         result = const CashScreen();
@@ -42,6 +50,27 @@ class RouteGenerator {
         break;
       case ScreenName.withdrawalCashScreen:
         result = const WithdrawlCashScreen();
+        break;
+      case ScreenName.withdrawalSentBankScreen:
+        result = const WithdrawalSentBank();
+        break;
+      case ScreenName.withdrawalBankCompletedScreen:
+        result = const WithdrawalCompletedBank();
+        break;
+      case ScreenName.withdrawalBankCanceledScreen:
+        result = const WithdrawalCanceledBank();
+        break;
+      case ScreenName.withdrawalPendCashScreen:
+        result = const WithdrawalCashPend();
+        break;
+      case ScreenName.withdrawalCashCompletedScreen:
+        result = const WithdrawalCompletedCash();
+        break;
+      case ScreenName.withdrawalCashCanceledScreen:
+        result = const WithdrawalCanceledCash();
+        break;
+      case ScreenName.withdrawalCashReadyScreen:
+        result = const WithdrawalCashReady();
         break;
       //   case ScreenName.signInScreen:
       //   result = const SignInScreen();

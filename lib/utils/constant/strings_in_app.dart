@@ -23,4 +23,11 @@ class AppStrings {
     " Avoid opening support ticket before expected\n date",
     " Confirm receiving your payment"
   ];
+  static const withdrawlCashInstructions = [
+    " Address: الرمال - تقاطع شارع فلسطين مع الشهداء",
+    " Working hours from 9:00 am to 7:00 pm",
+    " Bring your ID for identification",
+    " Confirm receiving your payment",
+    " Office fees 0.00",
+  ];
 }

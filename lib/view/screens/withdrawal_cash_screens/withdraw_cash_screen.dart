@@ -7,9 +7,9 @@ import 'package:hackathon_talents/utils/constant/strings_in_app.dart';
 import 'package:hackathon_talents/utils/helper.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
 
-import '../../utils/constant/colors_manger.dart';
-import '../../utils/constant/sizes_in_app.dart';
-import '../widget/sheared_appbar.dart';
+import '../../../utils/constant/colors_manger.dart';
+import '../../../utils/constant/sizes_in_app.dart';
+import '../../widget/sheared_appbar.dart';
 
 class WithdrawlCashScreen extends StatelessWidget {
   const WithdrawlCashScreen({Key? key}) : super(key: key);
