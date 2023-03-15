@@ -5,6 +5,11 @@ class EndPoints {
   static const int receiveTimeout = 35000;
   static const int connectTimeout = 35000;
 
+  // login && signUp
+  static const String loginEndPoint = '/user/login';
+  static const String signUpEndPoint = '/user/signup';
+
+
   // Bank Account/Payout Methods
   static const String sendCodeVerification = '/bank/send-code';
   static const String addBankAccount = '/bank/add';

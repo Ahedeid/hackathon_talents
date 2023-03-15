@@ -3,7 +3,7 @@
 //
 // import 'package:dio/dio.dart';
 // import 'package:flutter/material.dart';
-// import 'package:hakathon_app/api/post_api.dart';
+// import 'package:hakathon_app/api/bank_api.dart';
 // import 'package:hakathon_app/logic/models/post_model.dart';
 // import 'package:hakathon_app/logic/models/user_model.dart';
 // import 'package:file_picker/file_picker.dart';
