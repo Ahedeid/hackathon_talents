@@ -39,7 +39,7 @@ class _ContentOfBottomSheetOffseState extends State<ContentOfBottomSheetOffse> {
               )
             ],
           ),
-          const Divider(),
+          const Divider(thickness: 1,height: 0.5,),
           const SizedBox(
             height: 10,
           ),

@@ -66,130 +66,133 @@ class AddBankScreen extends StatelessWidget {
                   builder: (context, bank, child) => ListView.builder(
                       itemCount: bank.getBank.length,
                       itemBuilder: (context, index) {
-                        return ListTile(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(7),
-                              side: const BorderSide(
-                                color: Color(AppColor.primaryButtonColor),
-                              )),
-                          minVerticalPadding: 20,
-                          tileColor: const Color(AppColor.whiteTextButtonColor),
-                          //  onTap: () {
-                          // //   AppRouter.goTo(screenName: ScreenName.addBankAccount);
-                          //  },
-                          leading: CircleAvatar(
-                            radius: 40,
-                            backgroundColor: const Color(AppColor.scaffoldBack),
-                            child: SvgPicture.asset(
-                              IconsConstant.bank,
-                              height: 38,
-                            ),
-                          ),
-                          title: Text(
-                            bank.getBank[index].name,
-                            style: const TextStyle(
-                              fontSize: AppSizes.varyLarge,
-                              //fontWeight: FontWeight.bold,
-                              fontFamily: 'Segoe UI',
-                              color: Color(
-                                AppColor.primaryTextColor,
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: ListTile(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(7),
+                                side: const BorderSide(
+                                  color: Color(AppColor.primaryButtonColor),
+                                )),
+                            minVerticalPadding: 20,
+                            tileColor: const Color(AppColor.whiteTextButtonColor),
+                            //  onTap: () {
+                            // //   AppRouter.goTo(screenName: ScreenName.addBankAccount);
+                            //  },
+                            leading: CircleAvatar(
+                              radius: 40,
+                              backgroundColor: const Color(AppColor.scaffoldBack),
+                              child: SvgPicture.asset(
+                                IconsConstant.bank,
+                                height: 38,
                               ),
                             ),
-                          ),
-                          subtitle: Text(
-                            bank.getBank[index].accountNumber,
-                            style: const TextStyle(
-                              fontSize: AppSizes.textDefaultSize,
-                              fontFamily: 'Segoe UI',
-                              color: Color(
-                                AppColor.primaryTextColor,
+                            title: Text(
+                              bank.getBank[index].name,
+                              style: const TextStyle(
+                                fontSize: AppSizes.varyLarge,
+                                //fontWeight: FontWeight.bold,
+                                fontFamily: 'Segoe UI',
+                                color: Color(
+                                  AppColor.primaryTextColor,
+                                ),
                               ),
                             ),
-                          ),
-                          trailing: InkWell(
-                              onTap: () {
-                                print('a');
-                                showDialog(
-                                    context: context,
-                                    builder: (context) => AlertDialog(
-                                          elevation: 5,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(15)),
-                                          actionsAlignment:
-                                              MainAxisAlignment.center,
-                                          icon: Align(
-                                            alignment: Alignment.topRight,
-                                            child: InkWell(
-                                              onTap: () {
-                                                AppRouter.back();
-                                              },
-                                              child: const Icon(
-                                                Icons.close,
-                                                size: 20,
+                            subtitle: Text(
+                              bank.getBank[index].accountNumber,
+                              style: const TextStyle(
+                                fontSize: AppSizes.textDefaultSize,
+                                fontFamily: 'Segoe UI',
+                                color: Color(
+                                  AppColor.primaryTextColor,
+                                ),
+                              ),
+                            ),
+                            trailing: InkWell(
+                                onTap: () {
+                                  print('a');
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) => AlertDialog(
+                                            elevation: 5,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(15)),
+                                            actionsAlignment:
+                                                MainAxisAlignment.center,
+                                            icon: Align(
+                                              alignment: Alignment.topRight,
+                                              child: InkWell(
+                                                onTap: () {
+                                                  AppRouter.back();
+                                                },
+                                                child: const Icon(
+                                                  Icons.close,
+                                                  size: 20,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          iconPadding:
-                                              const EdgeInsets.symmetric(
-                                                  horizontal: 10, vertical: 10),
-                                          contentPadding:
-                                              const EdgeInsets.symmetric(
-                                                  vertical: 0, horizontal: 20),
-                                          content: const Text(
-                                            'Are you sure you want to delete your bank account?',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              color: Color(
-                                                  AppColor.primaryTextColor),
+                                            iconPadding:
+                                                const EdgeInsets.symmetric(
+                                                    horizontal: 10, vertical: 10),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    vertical: 0, horizontal: 20),
+                                            content: const Text(
+                                              'Are you sure you want to delete your bank account?',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Color(
+                                                    AppColor.primaryTextColor),
+                                              ),
                                             ),
-                                          ),
-                                          actions: [
-                                            ElevatedButton(
+                                            actions: [
+                                              ElevatedButton(
+                                                  style: ElevatedButton.styleFrom(
+                                                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                                                    backgroundColor: const Color(
+                                                        AppColor
+                                                            .whiteTextButtonColor),
+                                                    shape: RoundedRectangleBorder(
+                                                      side: const BorderSide(
+                                                        color: Color(
+                                                            AppColor.borderColor),
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              7),
+                                                    ),
+                                                  ),
+                                                  onPressed: () => Navigator.pop(
+                                                      context, false),
+                                                  child: const Text(
+                                                    'Cancel',
+                                                    style: TextStyle(
+                                                        color: Color(AppColor
+                                                            .primaryTextColor)),
+                                                  )),
+                                              ElevatedButton(
+                                                onPressed: () {
+                                                  AppRouter.back();
+                                                  UtilsConfig.showSnackBarMessage(message: 'Bank account has been deleted.', status: true);
+                                                  bank.removeItem(index);
+                                                },
                                                 style: ElevatedButton.styleFrom(
                                                   padding: const EdgeInsets.symmetric(horizontal: 40),
-                                                  backgroundColor: const Color(
-                                                      AppColor
-                                                          .whiteTextButtonColor),
-                                                  shape: RoundedRectangleBorder(
-                                                    side: const BorderSide(
-                                                      color: Color(
-                                                          AppColor.borderColor),
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            7),
-                                                  ),
-                                                ),
-                                                onPressed: () => Navigator.pop(
-                                                    context, false),
-                                                child: const Text(
-                                                  'Cancel',
-                                                  style: TextStyle(
-                                                      color: Color(AppColor
-                                                          .primaryTextColor)),
-                                                )),
-                                            ElevatedButton(
-                                              onPressed: () {
-                                                AppRouter.back();
-                                                UtilsConfig.showSnackBarMessage(message: 'Bank account has been deleted.', status: true);
-                                                bank.removeItem(index);
-                                              },
-                                              style: ElevatedButton.styleFrom(
-                                                padding: const EdgeInsets.symmetric(horizontal: 40),
-                                                  backgroundColor: const Color(
-                                                      AppColor.redDelete),
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            7),
-                                                  )),
-                                              child: const Text('Delete'),
-                                            ),
-                                          ],
-                                        ));
-                              },
-                              child: const Icon(Icons.close)),
+                                                    backgroundColor: const Color(
+                                                        AppColor.redDelete),
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              7),
+                                                    )),
+                                                child: const Text('Delete'),
+                                              ),
+                                            ],
+                                          ));
+                                },
+                                child: const Icon(Icons.close)),
+                          ),
                         );
                       }),
                 )),

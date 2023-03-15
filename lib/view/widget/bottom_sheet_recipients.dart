@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
-import '../../logics/models/offse_details.dart';
 import '../../logics/models/recipients_model.dart';
 import '../../utils/constant/colors_manger.dart';
 
@@ -17,7 +16,6 @@ class ContentSheetRecipients extends StatefulWidget {
 class _ContentSheetRecipientsState extends State<ContentSheetRecipients> {
   @override
   Widget build(BuildContext context) {
-    var midea = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       child: ListView(
@@ -42,7 +40,7 @@ class _ContentSheetRecipientsState extends State<ContentSheetRecipients> {
               )
             ],
           ),
-          const Divider(),
+          const Divider(thickness: 1,height: 0.5,),
           const SizedBox(height: 10),
           ListView.separated(
             physics: const NeverScrollableScrollPhysics(),

@@ -6,6 +6,7 @@ import 'package:hackathon_talents/view/widget/my_button.dart';
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
 import '../widget/bottom_sheet_ofess.dart';
+import '../widget/bottom_sheet_recipients.dart';
 import '../widget/sheared_appbar.dart';
 
 class CashWithDrawScreen extends StatelessWidget {
@@ -92,7 +93,9 @@ class CashWithDrawScreen extends StatelessWidget {
                       ],
                     ),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+
+                        },
                         icon: const Icon(
                           Icons.arrow_forward_ios,
                           color: Color(AppColor.gray),
@@ -132,7 +135,20 @@ class CashWithDrawScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(7),
                 ),
                 tileColor: const Color(AppColor.backGroundTextFieldColor),
-                onTap: () {},
+                onTap: () {
+                  showModalBottomSheet(
+                    shape: const OutlineInputBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15),
+                        ),
+                        borderSide: BorderSide.none),
+                    backgroundColor: Colors.white,
+                    context: context,
+                    isScrollControlled: true,
+                    builder: (context) => const ContentSheetRecipients(),
+                  );
+                },
                 leading: const Text(
                   'Select a recipient',
                   style: TextStyle(
