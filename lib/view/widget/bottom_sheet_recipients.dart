@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
-import '../../logics/models/recipients_model.dart';
+import '../../logics/models/api_models/localy_models/recipients_model.dart';
 import '../../utils/constant/colors_manger.dart';
 
 class ContentSheetRecipients extends StatefulWidget {

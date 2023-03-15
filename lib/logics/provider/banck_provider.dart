@@ -3,7 +3,7 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../models/bank_model.dart';
+import '../models/api_models/localy_models/bank_model.dart';
 
 
 class AddBankService extends ChangeNotifier{
