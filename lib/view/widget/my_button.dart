@@ -48,7 +48,7 @@ class MyButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             title == 'Withdraw'?  SvgPicture.asset(IconsConstant.withdraw):Container(),
-            const SizedBox(width: 8,),
+            const SizedBox(width: 8),
             Text(
               title,
               style: TextStyle(

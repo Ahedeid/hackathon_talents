@@ -18,87 +18,88 @@ class ContentOfBottomSheet extends StatefulWidget {
 class _ContentOfBottomSheetState extends State<ContentOfBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    var midea = MediaQuery.of(context).size;
-    return SizedBox(
-      height: midea.height * 0.25,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Payment Method',
-              style: TextStyle(
-                fontFamily: 'Segoe UI',
-                fontSize: AppSizes.textLarge,
-                color: Color(AppColor.gray),
-              ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
+      child: ListView(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        children: [
+          const Text(
+            'Payment Method',
+            style: TextStyle(
+              fontFamily: 'Segoe UI',
+              fontSize: AppSizes.textLarge,
+              color: Color(AppColor.gray),
             ),
-            const SizedBox(
-              height: 15,
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const Divider(
+            height: 0.5,
+            thickness: 0.5,
+            color: Color(0xFF707070),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          InkWell(
+            onTap: () {
+              AppRouter.goTo(screenName: ScreenName.withdrawRequestBankScreen);
+            },
+            child: Row(
+              children: [
+                const Text(
+                  'Bank',
+                  style: TextStyle(
+                      fontFamily: 'Segoe UI',
+                      fontSize: AppSizes.textSemiLarge,
+                      color: Color(AppColor.primaryTextColor),
+                      fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(
+                  width: 30,
+                ),
+                SizedBox(
+                  height: 25,
+                  width: 25,
+                  child: SvgPicture.asset(IconsConstant.bank),
+                )
+              ],
             ),
-            const Divider(
-              height: 0.5,
-              thickness: 0.5,
-              color: Color(0xFF707070),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          InkWell(
+            onTap: () {
+              AppRouter.goTo(screenName: ScreenName.withdrawRequestCashScreen);
+            },
+            child: Row(
+              children: [
+                const Text(
+                  'Cash',
+                  style: TextStyle(
+                      fontFamily: 'Segoe UI',
+                      fontSize: AppSizes.textSemiLarge,
+                      color: Color(AppColor.primaryTextColor),
+                      fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(
+                  width: 30,
+                ),
+                SizedBox(
+                  height: 28,
+                  width: 28,
+                  child: SvgPicture.asset(IconsConstant.money),
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 16,
-            ),
-            InkWell(
-              onTap: () {
-                AppRouter.goTo(screenName: ScreenName.withdrawRequestScreen);
-              },
-              child: Row(
-                children: [
-                  const Text(
-                    'Bank',
-                    style: TextStyle(
-                        fontFamily: 'Segoe UI',
-                        fontSize: AppSizes.textSemiLarge,
-                        color: Color(AppColor.primaryTextColor),
-                        fontWeight: FontWeight.w600),
-                  ),
-                  const SizedBox(
-                    width: 30,
-                  ),
-                  SizedBox(
-                      height: 25,
-                      width: 25,
-                      child: SvgPicture.asset(IconsConstant.bank))
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            InkWell(
-              onTap: () {
-                //  AppRouter.goTo(screenName: ScreenName.addBankScreen);
-              },
-              child: Row(
-                children: [
-                  const Text(
-                    'Cash',
-                    style: TextStyle(
-                        fontFamily: 'Segoe UI',
-                        fontSize: AppSizes.textSemiLarge,
-                        color: Color(AppColor.primaryTextColor),
-                        fontWeight: FontWeight.w600),
-                  ),
-                  const SizedBox(
-                    width: 30,
-                  ),
-                  SizedBox(
-                    height: 28,
-                    width: 28,
-                    child: SvgPicture.asset(IconsConstant.money),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+        ],
       ),
     );
   }

@@ -2,22 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
 import '../../logics/models/offse_details.dart';
+import '../../logics/models/recipients_model.dart';
 import '../../utils/constant/colors_manger.dart';
 
-class ContentOfBottomSheetOffse extends StatefulWidget {
-  const ContentOfBottomSheetOffse({
+class ContentSheetRecipients extends StatefulWidget {
+  const ContentSheetRecipients({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<ContentOfBottomSheetOffse> createState() => _ContentOfBottomSheetOffseState();
+  State<ContentSheetRecipients> createState() => _ContentSheetRecipientsState();
 }
 
-class _ContentOfBottomSheetOffseState extends State<ContentOfBottomSheetOffse> {
+class _ContentSheetRecipientsState extends State<ContentSheetRecipients> {
   @override
   Widget build(BuildContext context) {
+    var midea = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       child: ListView(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
@@ -26,10 +28,11 @@ class _ContentOfBottomSheetOffseState extends State<ContentOfBottomSheetOffse> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'Offices',
+                'Recipients',
                 style: TextStyle(
-                    fontSize: AppSizes.textSemiLarge,
-                    color: Color(AppColor.primaryTextColor)),
+                  fontSize: AppSizes.textLarge,
+                  color: Color(AppColor.primaryTextColor),
+                ),
               ),
               IconButton(
                 onPressed: () {
@@ -40,32 +43,23 @@ class _ContentOfBottomSheetOffseState extends State<ContentOfBottomSheetOffse> {
             ],
           ),
           const Divider(),
-          const SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: 10),
           ListView.separated(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            itemCount: OffseDetails.offesName.length,
+            itemCount: RecipientsDetails.clintName.length,
             separatorBuilder: (BuildContext context, int index) =>
                 const Divider(),
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
                 leading: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const Text(
-                      'ساعات العمل: 9 صباحا -7مساءا',
-                      style: TextStyle(
-                        fontSize: AppSizes.textVeryTiny,
-                        color: Color(AppColor.gray),
-                      ),
-                    ),
+                    const Text(''),
                     Text(
-                      OffseDetails.offesFees[index],
+                      RecipientsDetails.idClint[index],
                       style: const TextStyle(
-                        fontSize: AppSizes.textVeryTiny,
+                        fontSize: AppSizes.textTiny,
                         color: Color(AppColor.gray),
                       ),
                     ),
@@ -76,17 +70,17 @@ class _ContentOfBottomSheetOffseState extends State<ContentOfBottomSheetOffse> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      OffseDetails.offesName[index],
+                      RecipientsDetails.clintName[index],
                       style: const TextStyle(
-                          fontSize: AppSizes.textDefaultSize,
+                          fontSize: AppSizes.textSemiLarge,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Segoe UI"),
                     ),
                     Text(
-                      OffseDetails.offesLocation[index],
+                      RecipientsDetails.phoneNumber[index],
                       style: const TextStyle(
                         fontFamily: "Segoe UI",
-                        fontSize: AppSizes.textVeryTiny,
+                        fontSize: AppSizes.textTiny,
                         color: Color(AppColor.gray),
                       ),
                     ),
@@ -101,3 +95,21 @@ class _ContentOfBottomSheetOffseState extends State<ContentOfBottomSheetOffse> {
   }
 }
 
+/*
+showModalBottomSheet(
+            shape: const OutlineInputBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                ),
+                borderSide: BorderSide.none),
+            backgroundColor: Colors.white,
+            context: context,
+            isScrollControlled: true,
+            builder: (context) => SizedBox(
+              child: ContentOfBottomSheet(
+                midea: MediaQuery.of(context).size,
+              ),
+            ),
+          );
+ */

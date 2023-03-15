@@ -60,6 +60,12 @@ int maxLines ;
         fillColor: const Color(AppColor.backGroundTextFieldColor),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 16),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: const BorderSide(
+              color: Color(AppColor.borderColor),
+            )
+        ),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(

@@ -22,6 +22,7 @@ class HackathonTalents extends StatelessWidget {
       create: (context) => AddBankService(),
       child: MaterialApp(
         theme: ThemeData(
+          fontFamily: "Segoe UI",
           scaffoldBackgroundColor: const Color(AppColor.scaffoldBack),
         ),
         title: 'HackathonTalents',

@@ -6,13 +6,13 @@ import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/sizes_in_app.dart';
 import '../widget/sheared_appbar.dart';
 
-class WithdrawRequestScreen extends StatelessWidget {
-  const WithdrawRequestScreen({Key? key}) : super(key: key);
+class WithdrawRequestScreenCash extends StatelessWidget {
+  const WithdrawRequestScreenCash({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(title: 'Bank Withdraw', isBack: true),
+      appBar: ShearedAppBar(title: 'Cash Withdraw', isBack: true),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -44,7 +44,7 @@ class WithdrawRequestScreen extends StatelessWidget {
                   border: OutlineInputBorder(borderSide: BorderSide.none),
                   hintText: '\$0.00',
                   errorStyle: TextStyle(fontSize: 12, height: 0.3),
-               //   prefixText: '\$',
+                  //   prefixText: '\$',
                   hintStyle: TextStyle(
                       color: Color(AppColor.gray),
                       fontWeight: FontWeight.bold,
@@ -83,7 +83,7 @@ class WithdrawRequestScreen extends StatelessWidget {
         child: MyButton(
           title: 'Continue',
           onPressed: () {
-            AppRouter.goTo(screenName: ScreenName.addBankScreen);
+            AppRouter.goTo(screenName: ScreenName.cashWithDrawScreen);
           },
           textColorIsWhite: false,
         ),

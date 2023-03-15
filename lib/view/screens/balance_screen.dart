@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hackathon_talents/routes/app_router.dart';
-import 'package:hackathon_talents/routes/screen_name.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
 import 'package:hackathon_talents/view/widget/sheared_appbar.dart';
@@ -69,22 +67,21 @@ class BalanceScreen extends StatelessWidget {
                       textColorIsWhite: true,
                       textColor: AppColor.primaryButtonColor,
                       onPressed: () {
-                       showModalBottomSheet(
-                         shape: const OutlineInputBorder(
-                             borderRadius: BorderRadius.only(
-                               topLeft: Radius.circular(15),
-                               topRight: Radius.circular(15),
-                             ),
-                             borderSide: BorderSide.none),
-                         backgroundColor: Colors.white,
-                         context: context,
-                         isScrollControlled: true,
-                         builder: (context) => const SizedBox(
-                           child: ContentOfBottomSheet(
-                               //midea: MediaQuery.of(context).size,
-                               ),
-                         ),
-                       );
+                        showModalBottomSheet(
+                          shape: const OutlineInputBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(15),
+                                topRight: Radius.circular(15),
+                              ),
+                              borderSide: BorderSide.none),
+                          backgroundColor: Colors.white,
+                          context: context,
+                          isScrollControlled: true,
+                          builder: (context) => const SizedBox(
+                            child: ContentOfBottomSheet(),
+                            // ContentOfBottomSheet(),
+                          ),
+                        );
                       },
                     ),
                   ],
@@ -103,12 +100,13 @@ class BalanceScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 12),
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(7),
-                  border: Border.all(
-                    width: 0.5,
-                    color: const Color(AppColor.borderColor),
-                  )),
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(7),
+                border: Border.all(
+                  width: 0.5,
+                  color: const Color(AppColor.borderColor),
+                ),
+              ),
               child: ListView.separated(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
