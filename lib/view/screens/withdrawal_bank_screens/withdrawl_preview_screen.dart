@@ -70,14 +70,14 @@ class WithdrawlPrevviewScreen extends StatelessWidget {
                         width: .5,
                         color: const Color(AppColor.borderColorUnSelected)),
                     borderRadius: BorderRadius.circular(7)),
-                height: 93,
-                width: 350,
+                 height: 93,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SvgPicture.asset(IconsConstant.bank),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Row(
                           children: const [
@@ -118,7 +118,7 @@ class WithdrawlPrevviewScreen extends StatelessWidget {
                 height: 128,
                 width: 350,
                 padding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

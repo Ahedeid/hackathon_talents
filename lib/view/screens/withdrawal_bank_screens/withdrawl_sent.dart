@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/utils/constant/colors_manger.dart';
 import 'package:hackathon_talents/utils/constant/icons_constant.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
-
 import 'package:hackathon_talents/view/widget/my_button.dart';
 import 'package:hackathon_talents/view/widget/sheared_appbar.dart';
+
+import '../../../routes/screen_name.dart';
+
+
+
 
 class WithdrawalSentBank extends StatelessWidget {
   const WithdrawalSentBank({super.key});
@@ -20,7 +25,7 @@ class WithdrawalSentBank extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 22),
           child: ListView(
             children: [
               Container(
@@ -31,7 +36,6 @@ class WithdrawalSentBank extends StatelessWidget {
                         color: const Color(AppColor.borderColorUnSelected)),
                     borderRadius: BorderRadius.circular(7)),
                 height: 130,
-                width: 350,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -61,9 +65,9 @@ class WithdrawalSentBank extends StatelessWidget {
                             decoration: BoxDecoration(
                                 border: Border.all(
                                     color:
-                                    const Color(AppColor.borderContainer)),
+                                        const Color(AppColor.borderContainer)),
                                 color:
-                                const Color(AppColor.backGroundContainer),
+                                    const Color(AppColor.backGroundContainer),
                                 borderRadius: BorderRadius.circular(30)),
                             child: const Text(
                               "Sent",
@@ -171,12 +175,10 @@ class WithdrawalSentBank extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 16,
-              ),
+              const SizedBox(height: 16),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 decoration: BoxDecoration(
                     color: const Color(AppColor.backGroundTextFieldColor),
                     border: Border.all(
@@ -224,7 +226,8 @@ class WithdrawalSentBank extends StatelessWidget {
                 height: 40,
               ),
               Container(
-                padding: const EdgeInsets.only(top: 12),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                     color: const Color(AppColor.backGroundTextFieldColor),
                     border: Border.all(
@@ -232,7 +235,6 @@ class WithdrawalSentBank extends StatelessWidget {
                         color: const Color(AppColor.borderColorUnSelected)),
                     borderRadius: BorderRadius.circular(7)),
                 height: 75,
-                width: 350,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -271,8 +273,9 @@ class WithdrawalSentBank extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 20),
                 child: MyButton(
                   title: "Confirm Recipit",
-                  onPressed: () {},
-                  width: 350,
+                  onPressed: () {
+                    AppRouter.goTo(screenName: ScreenName.withdrawalCashCompletedScreen);
+                  },
                   height: 45,
                   textColor: AppColor.primaryTextColor,
                 ),

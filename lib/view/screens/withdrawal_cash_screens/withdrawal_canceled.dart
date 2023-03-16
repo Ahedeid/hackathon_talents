@@ -21,11 +21,11 @@ class WithdrawalCanceledCash extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 22),
           child: ListView(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
                     color: const Color(AppColor.backGroundTextFieldColor),
                     border: Border.all(
@@ -227,6 +227,7 @@ class WithdrawalCanceledCash extends StatelessWidget {
                                     color: Colors.black,
                                     shape: BoxShape.circle),
                               ),
+                              const SizedBox(width: 8),
                               Text(
                                 AppStrings.withdrawlCashInstructions[index],
                                 style: const TextStyle(
@@ -245,9 +246,8 @@ class WithdrawalCanceledCash extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: MyButton(
-                  title: "I Recieved Payout",
+                  title: "Confirm Recipit",
                   onPressed: () {},
-                  width: 350,
                   height: 45,
                   textColor: AppColor.borderColorUnSelected,
                 ),

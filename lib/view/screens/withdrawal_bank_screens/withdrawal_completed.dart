@@ -60,9 +60,9 @@ class WithdrawalCompletedBank extends StatelessWidget {
                             decoration: BoxDecoration(
                                 border: Border.all(
                                     color:
-                                    const Color(AppColor.borderContainer)),
+                                        const Color(AppColor.borderContainer)),
                                 color:
-                                const Color(AppColor.backGroundContainer),
+                                    const Color(AppColor.backGroundContainer),
                                 borderRadius: BorderRadius.circular(30)),
                             child: const Text(
                               "Completed",
@@ -144,10 +144,13 @@ class WithdrawalCompletedBank extends StatelessWidget {
                       children: [
                         Column(
                           children: const [
-                            Text("7:30 am",
-                                style: TextStyle(
-                                    fontSize: AppSizes.textTiny,
-                                    color: Color(0xff656565))),
+                            Text(
+                              "7:30 am",
+                              style: TextStyle(
+                                fontSize: AppSizes.textTiny,
+                                color: Color(0xff656565),
+                              ),
+                            ),
                             Text(
                               'Today',
                               style: TextStyle(
@@ -175,7 +178,7 @@ class WithdrawalCompletedBank extends StatelessWidget {
               ),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 decoration: BoxDecoration(
                     color: const Color(AppColor.backGroundTextFieldColor),
                     border: Border.all(

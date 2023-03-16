@@ -132,7 +132,9 @@ class ContentSheetPending extends StatelessWidget {
                 title: 'Show more',
                 textColor: AppColor.primaryButtonColor,
                 textColorIsWhite: true,
-                onPressed: () {},
+                onPressed: () {
+                  AppRouter.goTo(screenName: ScreenName.withdrawalPendCashScreen);
+                },
                 width: 160,
               ),
             ],

@@ -266,7 +266,7 @@ class WithdrawalSentCash extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: MyButton(
-                  title: "Confirm Recipit",
+                  title: "Confirm Recipient",
                   onPressed: () {},
                   width: 350,
                   height: 45,

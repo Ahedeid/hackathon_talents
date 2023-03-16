@@ -57,9 +57,7 @@ class WithdrawlCashScreen extends StatelessWidget {
                   Container()
                 ],
               ),
-              const SizedBox(
-                height: 8,
-              ),
+              const SizedBox(height: 8),
               Container(
                 decoration: BoxDecoration(
                     color: const Color(AppColor.backGroundTextFieldColor),
@@ -113,7 +111,7 @@ class WithdrawlCashScreen extends StatelessWidget {
                 height: 150,
                 width: 350,
                 padding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -132,10 +130,10 @@ class WithdrawlCashScreen extends StatelessWidget {
                       children: const [
                         Text("Transfer amount",
                             style:
-                            TextStyle(fontSize: AppSizes.textDefaultSize)),
+                                TextStyle(fontSize: AppSizes.textDefaultSize)),
                         Text("\$300 ",
                             style:
-                            TextStyle(fontSize: AppSizes.textDefaultSize))
+                                TextStyle(fontSize: AppSizes.textDefaultSize))
                       ],
                     ),
                     Row(
@@ -143,10 +141,10 @@ class WithdrawlCashScreen extends StatelessWidget {
                       children: const [
                         Text("Fee",
                             style:
-                            TextStyle(fontSize: AppSizes.textDefaultSize)),
+                                TextStyle(fontSize: AppSizes.textDefaultSize)),
                         Text("Free ",
                             style:
-                            TextStyle(fontSize: AppSizes.textDefaultSize))
+                                TextStyle(fontSize: AppSizes.textDefaultSize))
                       ],
                     ),
                     const Divider(color: Colors.grey, height: 1),
@@ -155,7 +153,7 @@ class WithdrawlCashScreen extends StatelessWidget {
                       children: const [
                         Text("You'll get",
                             style:
-                            TextStyle(fontSize: AppSizes.textDefaultSize)),
+                                TextStyle(fontSize: AppSizes.textDefaultSize)),
                         Text("\$300 ",
                             style: TextStyle(
                                 fontSize: AppSizes.textDefaultSize,
@@ -176,11 +174,11 @@ class WithdrawlCashScreen extends StatelessWidget {
                     ),
                     ...List.generate(
                         AppStrings.transferPreviewInstructions.length,
-                            (index) => Padding(
-                          padding: const EdgeInsets.only(bottom: 18),
-                          child: Text(AppStrings
-                              .transferPreviewInstructions[index]),
-                        )),
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(bottom: 18),
+                              child: Text(AppStrings
+                                  .transferPreviewInstructions[index]),
+                            )),
                   ]),
               const SizedBox(
                 height: 10,
@@ -192,7 +190,7 @@ class WithdrawlCashScreen extends StatelessWidget {
 
                   UtilsConfig.showSnackBarMessage(
                       message:
-                      "Wait for the payment to be ready within 24 hours.",
+                          "Wait for the payment to be ready within 24 hours.",
                       status: true);
                 },
                 isBorder: true,

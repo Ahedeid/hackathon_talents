@@ -112,7 +112,6 @@ class AddBankScreen extends StatelessWidget {
                             ),
                             trailing: InkWell(
                                 onTap: () {
-                                  print('a');
                                   showDialog(
                                       context: context,
                                       builder: (context) => AlertDialog(

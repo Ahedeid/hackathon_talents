@@ -181,7 +181,9 @@ class CashWithDrawScreen extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height * 0.08),
             MyButton(
               title: 'Continue',
-              onPressed: () {},
+              onPressed: () {
+                AppRouter.goTo(screenName: ScreenName.withdrawalPreviewScreen);
+              },
               textColorIsWhite: false,
             ),
           ],

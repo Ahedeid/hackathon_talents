@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/utils/constant/colors_manger.dart';
 import 'package:hackathon_talents/utils/constant/icons_constant.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
 import 'package:hackathon_talents/utils/constant/strings_in_app.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
 import 'package:hackathon_talents/view/widget/sheared_appbar.dart';
+
+import '../../../routes/screen_name.dart';
 
 class WithdrawalBank extends StatelessWidget {
   const WithdrawalBank({super.key});
@@ -60,10 +63,10 @@ class WithdrawalBank extends StatelessWidget {
                                 horizontal: 14, vertical: 3),
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                    color:
-                                    const Color(AppColor.borderContainer)),
+                                  color: const Color(AppColor.borderContainer),
+                                ),
                                 color:
-                                const Color(AppColor.backGroundContainer),
+                                    const Color(AppColor.backGroundContainer),
                                 borderRadius: BorderRadius.circular(30)),
                             child: const Text(
                               "Pending",
@@ -176,13 +179,14 @@ class WithdrawalBank extends StatelessWidget {
               ),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 decoration: BoxDecoration(
-                    color: const Color(AppColor.backGroundTextFieldColor),
-                    border: Border.all(
-                        width: .5,
-                        color: const Color(AppColor.borderColorUnSelected)),
-                    borderRadius: BorderRadius.circular(7)),
+                  color: const Color(AppColor.backGroundTextFieldColor),
+                  border: Border.all(
+                      width: .5,
+                      color: const Color(AppColor.borderColorUnSelected)),
+                  borderRadius: BorderRadius.circular(7),
+                ),
                 height: 120,
                 width: 350,
                 child: Column(
@@ -221,7 +225,7 @@ class WithdrawalBank extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 16),
@@ -243,43 +247,41 @@ class WithdrawalBank extends StatelessWidget {
                     ),
                     ...List.generate(
                         AppStrings.withdrawlInstructions.length,
-                            (index) => Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 7,
-                                width: 7,
-                                decoration: const BoxDecoration(
-                                    color: Colors.black,
-                                    shape: BoxShape.circle),
+                        (index) => Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    height: 7,
+                                    width: 7,
+                                    decoration: const BoxDecoration(
+                                        color: Colors.black,
+                                        shape: BoxShape.circle),
+                                  ),
+                                  const SizedBox(width: 5),
+                                  Text(
+                                    AppStrings.withdrawlInstructions[index],
+                                    style: const TextStyle(
+                                        fontSize: AppSizes.textVerySmall),
+                                  ),
+                                ],
                               ),
-                              SizedBox(width: 5,),
-                              Text(
-                                AppStrings.withdrawlInstructions[index],
-                                style: const TextStyle(
-                                    fontSize: AppSizes.textVerySmall),
-                              ),
-                            ],
-                          ),
-                        ))
+                            ))
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 40,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: MyButton(
-                  title: "Cancel Withdrawal",
-                  onPressed: () {},
-                  width: 350,
-                  height: 45,
-                  textColor: AppColor.primaryTextColor,
-                ),
+              const SizedBox(height: 20),
+              MyButton(
+                title: "Cancel Withdrawal",
+                onPressed: () {
+                  AppRouter.goToAndRemove(
+                      screenName: ScreenName.withdrawRequestCashScreen);
+                },
+                width: 350,
+                height: 45,
+                textColor: AppColor.primaryTextColor,
               )
             ],
           ),

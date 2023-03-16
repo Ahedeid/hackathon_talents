@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/utils/constant/colors_manger.dart';
 import 'package:hackathon_talents/utils/constant/icons_constant.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
 import 'package:hackathon_talents/utils/constant/strings_in_app.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
 import 'package:hackathon_talents/view/widget/sheared_appbar.dart';
+
+import '../../../routes/screen_name.dart';
 
 
 class WithdrawalCompletedCash extends StatelessWidget {
@@ -21,11 +24,11 @@ class WithdrawalCompletedCash extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 22),
           child: ListView(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 14),
                 decoration: BoxDecoration(
                     color: const Color(AppColor.backGroundTextFieldColor),
                     border: Border.all(
@@ -33,7 +36,6 @@ class WithdrawalCompletedCash extends StatelessWidget {
                         color: const Color(AppColor.borderColorUnSelected)),
                     borderRadius: BorderRadius.circular(7)),
                 height: 130,
-                width: 350,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -193,7 +195,7 @@ class WithdrawalCompletedCash extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 25,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 16),
@@ -204,7 +206,6 @@ class WithdrawalCompletedCash extends StatelessWidget {
                         color: const Color(AppColor.borderColorUnSelected)),
                     borderRadius: BorderRadius.circular(7)),
                 height: 210,
-                width: 350,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -227,6 +228,7 @@ class WithdrawalCompletedCash extends StatelessWidget {
                                     color: Colors.black,
                                     shape: BoxShape.circle),
                               ),
+                              const SizedBox(width: 8),
                               Text(
                                 AppStrings.withdrawlCashInstructions[index],
                                 style: const TextStyle(
@@ -239,15 +241,17 @@ class WithdrawalCompletedCash extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
 
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: MyButton(
                   title: "Report a Problem",
-                  onPressed: () {},
-                  width: 350,
+                  onPressed: () {
+                    AppRouter.goToAndRemove(screenName: ScreenName.withdrawalCashCanceledScreen);
+                  },
+
                   height: 45,
                   textColor: AppColor.primaryTextColor,
                 ),
