@@ -246,7 +246,7 @@ class WithdrawalCanceledCash extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: MyButton(
-                  title: "Confirm Recipit",
+                  title: "Confirm Recipient",
                   onPressed: () {},
                   height: 45,
                   textColor: AppColor.borderColorUnSelected,
