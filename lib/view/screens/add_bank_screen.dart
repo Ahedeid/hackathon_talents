@@ -19,7 +19,7 @@ class AddBankScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(title: 'Bank Withdraw', isBack: true),
+      appBar: SharedAppBar(title: 'Bank Withdraw', isBack: true),
       body: Padding(
           padding: const EdgeInsets.symmetric(
               horizontal: AppSizes.paddingHorizontal,
@@ -75,13 +75,15 @@ class AddBankScreen extends StatelessWidget {
                                   color: Color(AppColor.primaryButtonColor),
                                 )),
                             minVerticalPadding: 20,
-                            tileColor: const Color(AppColor.whiteTextButtonColor),
+                            tileColor:
+                                const Color(AppColor.whiteTextButtonColor),
                             //  onTap: () {
                             // //   AppRouter.goTo(screenName: ScreenName.addBankAccount);
                             //  },
                             leading: CircleAvatar(
                               radius: 40,
-                              backgroundColor: const Color(AppColor.scaffoldBack),
+                              backgroundColor:
+                                  const Color(AppColor.scaffoldBack),
                               child: SvgPicture.asset(
                                 IconsConstant.bank,
                                 height: 38,
@@ -134,10 +136,12 @@ class AddBankScreen extends StatelessWidget {
                                             ),
                                             iconPadding:
                                                 const EdgeInsets.symmetric(
-                                                    horizontal: 10, vertical: 10),
+                                                    horizontal: 10,
+                                                    vertical: 10),
                                             contentPadding:
                                                 const EdgeInsets.symmetric(
-                                                    vertical: 0, horizontal: 20),
+                                                    vertical: 0,
+                                                    horizontal: 20),
                                             content: const Text(
                                               'Are you sure you want to delete your bank account?',
                                               style: TextStyle(
@@ -148,23 +152,28 @@ class AddBankScreen extends StatelessWidget {
                                             ),
                                             actions: [
                                               ElevatedButton(
-                                                  style: ElevatedButton.styleFrom(
-                                                    padding: const EdgeInsets.symmetric(horizontal: 40),
-                                                    backgroundColor: const Color(
-                                                        AppColor
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
+                                                        horizontal: 40),
+                                                    backgroundColor:
+                                                        const Color(AppColor
                                                             .whiteTextButtonColor),
-                                                    shape: RoundedRectangleBorder(
+                                                    shape:
+                                                        RoundedRectangleBorder(
                                                       side: const BorderSide(
-                                                        color: Color(
-                                                            AppColor.borderColor),
+                                                        color: Color(AppColor
+                                                            .borderColor),
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               7),
                                                     ),
                                                   ),
-                                                  onPressed: () => Navigator.pop(
-                                                      context, false),
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          context, false),
                                                   child: const Text(
                                                     'Cancel',
                                                     style: TextStyle(
@@ -174,14 +183,21 @@ class AddBankScreen extends StatelessWidget {
                                               ElevatedButton(
                                                 onPressed: () {
                                                   AppRouter.back();
-                                                  UtilsConfig.showSnackBarMessage(message: 'Bank account has been deleted.', status: true);
+                                                  UtilsConfig.showSnackBarMessage(
+                                                      message:
+                                                          'Bank account has been deleted.',
+                                                      status: true);
                                                   bank.removeItem(index);
                                                 },
                                                 style: ElevatedButton.styleFrom(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 40),
-                                                    backgroundColor: const Color(
-                                                        AppColor.redDelete),
-                                                    shape: RoundedRectangleBorder(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
+                                                        horizontal: 40),
+                                                    backgroundColor:
+                                                        const Color(
+                                                            AppColor.redDelete),
+                                                    shape:
+                                                        RoundedRectangleBorder(
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               7),
@@ -205,8 +221,13 @@ class AddBankScreen extends StatelessWidget {
             MyButton(
                 title: 'Continue',
                 onPressed: () {
-                  UtilsConfig.showSnackBarMessage(
-                      message: 'Please select a bank account.', status: false);
+                  if (context.read<AddBankService>().getBank.isEmpty) {
+                    UtilsConfig.showSnackBarMessage(
+                        message: 'Please select a bank account.',
+                        status: false);
+                  }else{
+                    AppRouter.goTo(screenName: ScreenName.withdrawalPreviewScreen);
+                  }
                 },
                 textColorIsWhite: false),
             const SizedBox(

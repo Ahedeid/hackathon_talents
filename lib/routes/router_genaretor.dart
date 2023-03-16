@@ -6,9 +6,20 @@ import 'package:hackathon_talents/view/screens/cash_withdeaw_screen.dart';
 import 'package:hackathon_talents/view/screens/withdraw_request_cash_screen.dart';
 import '../view/screens/add_bank_screen.dart';
 import '../view/screens/add_recipients_screen.dart';
+import '../view/screens/edit_recepient.dart';
 import '../view/screens/ottp_screen.dart';
 import '../view/screens/recipients_screen.dart';
 import '../view/screens/withdraw_request_bank_screen.dart';
+import '../view/screens/withdrawal_bank_screens/withdrawal_canceled.dart';
+import '../view/screens/withdrawal_bank_screens/withdrawal_completed.dart';
+import '../view/screens/withdrawal_bank_screens/withdrawl.dart';
+import '../view/screens/withdrawal_bank_screens/withdrawl_preview_screen.dart';
+import '../view/screens/withdrawal_bank_screens/withdrawl_sent.dart';
+import '../view/screens/withdrawal_cash_screens/withdraw_cash_screen.dart';
+import '../view/screens/withdrawal_cash_screens/withdrawal_canceled.dart';
+import '../view/screens/withdrawal_cash_screens/withdrawal_completed.dart';
+import '../view/screens/withdrawal_cash_screens/withdrawal_ready.dart';
+import '../view/screens/withdrawal_cash_screens/withdrawl_pend.dart';
 
 
 class RouteGenerator {
@@ -16,7 +27,7 @@ class RouteGenerator {
     Widget result;
     switch (settings.name) {
       case ScreenName.balanceScreen:
-        result = const BalanceScreen();
+        result =  BalanceScreen();
         break;
       case ScreenName.withdrawRequestBankScreen:
         result = const WithdrawRequestScreenBank();
@@ -42,6 +53,44 @@ class RouteGenerator {
         case ScreenName.recipentsScreen:
         result = const RecipientsScreen();
         break;
+        //------------------------------------------------------------
+      // case ScreenName.withdrawRequestScreen:
+      //   result = const WithdrawRequestScreen();
+      //   break;
+      case ScreenName.withdrawalPreviewScreen:
+        result = const WithdrawlPrevviewScreen();
+        break;
+      case ScreenName.withdrawalBankScreen:
+        result = const WithdrawalBank();
+        break;
+      case ScreenName.editRecepientScreen:
+        result = const EditRecepientScreen();
+        break;
+      case ScreenName.withdrawalCashScreen:
+        result = const WithdrawlCashScreen();
+        break;
+      case ScreenName.withdrawalSentBankScreen:
+        result = const WithdrawalSentBank();
+        break;
+      case ScreenName.withdrawalBankCompletedScreen:
+        result = const WithdrawalCompletedBank();
+        break;
+      case ScreenName.withdrawalBankCanceledScreen:
+        result = const WithdrawalCanceledBank();
+        break;
+      case ScreenName.withdrawalPendCashScreen:
+        result = const WithdrawalCashPend();
+        break;
+      case ScreenName.withdrawalCashCompletedScreen:
+        result = const WithdrawalCompletedCash();
+        break;
+      case ScreenName.withdrawalCashCanceledScreen:
+        result = const WithdrawalCanceledCash();
+        break;
+      case ScreenName.withdrawalCashReadyScreen:
+        result = const WithdrawalCashReady();
+        break;
+    //--------------------------------------------------------------------
       default:
         result = const Scaffold(
           body: Center(

@@ -12,7 +12,7 @@ class WithdrawRequestScreenCash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(title: 'Cash Withdraw', isBack: true),
+      appBar: SharedAppBar(title: 'Cash Withdraw', isBack: true),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),

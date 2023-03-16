@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hackathon_talents/routes/app_router.dart';
+import 'package:hackathon_talents/routes/screen_name.dart';
 import 'package:hackathon_talents/utils/constant/icons_constant.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
@@ -19,7 +21,7 @@ class ContentSheetPending extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: midea.width*0.25),
+            margin: EdgeInsets.symmetric(horizontal: midea.width*0.3) ,
             height: 3,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(2),
@@ -120,7 +122,9 @@ class ContentSheetPending extends StatelessWidget {
                 title: 'Done',
                 textColor: AppColor.primaryButtonColor,
                 textColorIsWhite: true,
-                onPressed: () {},
+                onPressed: () {
+                  AppRouter.goTo(screenName: ScreenName.withdrawalBankScreen);
+                },
                 width: 160,
               ),
               MyButton(

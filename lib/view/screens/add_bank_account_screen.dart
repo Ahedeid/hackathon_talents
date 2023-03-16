@@ -34,12 +34,11 @@ class _AddBankAccountState extends State<AddBankAccount> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: ShearedAppBar(title: 'Add Bank Account', isBack: true),
+      appBar: SharedAppBar(title: 'Add Bank Account', isBack: true),
       body: Padding(
         padding: EdgeInsets.only(
             left: AppSizes.paddingHorizontal,
             right: AppSizes.paddingHorizontal,
-            top: 10,
             bottom: MediaQuery.of(context).viewInsets.bottom),
         child: SingleChildScrollView(
           child: Column(

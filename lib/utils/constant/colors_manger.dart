@@ -18,4 +18,6 @@ class AppColor {
   static const int green = 0xFFF70B668;
   static const int redWarning = 0xFFFEE404C;
   static const int backGroundBottomSheet = 0xFF505050;
+  static const int backGroundContainer = 0xffFFF9F0;
+  static const int borderContainer = 0xffF3F3F3;
 }

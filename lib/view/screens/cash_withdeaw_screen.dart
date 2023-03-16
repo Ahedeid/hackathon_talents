@@ -15,7 +15,7 @@ class CashWithDrawScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(title: 'Cash', isBack: true),
+      appBar: SharedAppBar(title: 'Cash', isBack: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

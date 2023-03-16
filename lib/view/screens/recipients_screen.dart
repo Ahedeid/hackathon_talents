@@ -13,7 +13,7 @@ class RecipientsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(title: 'Add Recipient', isBack: true),
+      appBar: SharedAppBar(title: 'Add Recipient', isBack: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
         child: Column(

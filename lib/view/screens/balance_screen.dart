@@ -1,19 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_talents/logics/provider/withdeawProvider.dart';
 import 'package:hackathon_talents/utils/constant/sizes_in_app.dart';
 import 'package:hackathon_talents/view/widget/my_button.dart';
 import 'package:hackathon_talents/view/widget/sheared_appbar.dart';
+import 'package:provider/provider.dart';
 
 import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/constant_text_styles.dart';
 import '../widget/BottomSheet.dart';
 
-class BalanceScreen extends StatelessWidget {
-  const BalanceScreen({Key? key}) : super(key: key);
+class BalanceScreen extends StatefulWidget {
+   BalanceScreen({Key? key}) : super(key: key);
 
+  @override
+  State<BalanceScreen> createState() => _BalanceScreenState();
+}
+
+
+class _BalanceScreenState extends State<BalanceScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<WithdrawProvider>().getAllWithdraw();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(title: 'Balance'),
+      appBar: SharedAppBar(title: 'Balance'),
       body: Padding(
         padding:
             const EdgeInsets.symmetric(horizontal: AppSizes.paddingHorizontal),
@@ -107,49 +120,54 @@ class BalanceScreen extends StatelessWidget {
                   color: const Color(AppColor.borderColor),
                 ),
               ),
-              child: ListView.separated(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 25,
-                separatorBuilder: (BuildContext context, int index) =>
-                    const Divider(),
-                itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    leading: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'غزة - مكتب الدانا',
-                          style: AppTextStyles.deafultText,
-                        ),
-                        Text(
-                          '12:30 AM, 21 Aug',
-                          style: AppTextStyles.bodyText1,
-                        ),
-                      ],
-                    ),
-                    trailing: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        Text(
-                          '\$567',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "Segoe UI"),
-                        ),
-                        Text(
-                          'Pending',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "Segoe UI",
-                              color: Color(0xFFDAA545)),
-                        ),
-                      ],
-                    ),
-                  );
-                },
+              child: Consumer<WithdrawProvider>(
+                builder: (context, withdraw, child)=> ListView.separated(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount:  5,
+                  //withdraw.withdrawList.length,
+                  separatorBuilder: (BuildContext context, int index) =>
+                      const Divider(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return ListTile(
+                      leading: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            'asdasdas',
+                          //  withdraw.withdrawList[index].office[index],
+                            style: AppTextStyles.deafultText,
+                          ),
+                          Text(
+                            '12:30 AM, 21 Aug',
+                            style: AppTextStyles.bodyText1,
+                          ),
+                        ],
+                      ),
+                      trailing: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: const [
+                          Text(
+                            '\$567',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Segoe UI"),
+                          ),
+                          Text(
+                            'Pending',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Segoe UI",
+                                color: Color(0xFFDAA545)),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
             )
           ],

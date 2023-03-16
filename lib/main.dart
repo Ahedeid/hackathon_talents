@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_talents/logics/provider/withdeawProvider.dart';
 import 'package:hackathon_talents/routes/app_router.dart';
 import 'package:hackathon_talents/routes/router_genaretor.dart';
 import 'package:hackathon_talents/routes/screen_name.dart';
@@ -18,21 +19,28 @@ class HackathonTalents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => AddBankService(),
-      child: MaterialApp(
-        theme: ThemeData(
-          fontFamily: "Segoe UI",
-          scaffoldBackgroundColor: const Color(AppColor.scaffoldBack),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+        create: (context) => AddBankService(),
         ),
-        title: 'HackathonTalents',
-        checkerboardOffscreenLayers: false,
-        scaffoldMessengerKey: UtilsConfig.scaffoldKey,
-        debugShowCheckedModeBanner: false,
-        initialRoute: ScreenName.balanceScreen,
-        onGenerateRoute: RouteGenerator.onGenerateRoute,
-        navigatorKey: AppRouter.navigatorKey,
-      ),
+        ChangeNotifierProvider(
+          create: (context) => WithdrawProvider(),
+        ),
+      ],
+        child: MaterialApp(
+          theme: ThemeData(
+            fontFamily: "Segoe UI",
+            scaffoldBackgroundColor: const Color(AppColor.scaffoldBack),
+          ),
+          title: 'HackathonTalents',
+          checkerboardOffscreenLayers: false,
+          scaffoldMessengerKey: UtilsConfig.scaffoldKey,
+          debugShowCheckedModeBanner: false,
+          initialRoute: ScreenName.balanceScreen,
+          onGenerateRoute: RouteGenerator.onGenerateRoute,
+          navigatorKey: AppRouter.navigatorKey,
+        ),
     );
   }
 }

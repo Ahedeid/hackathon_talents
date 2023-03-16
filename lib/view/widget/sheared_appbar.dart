@@ -5,8 +5,8 @@ import '../../utils/constant/colors_manger.dart';
 import '../../utils/constant/images_constant.dart';
 import '../../utils/constant/sizes_in_app.dart';
 
-class ShearedAppBar extends StatelessWidget with PreferredSizeWidget {
-  ShearedAppBar({
+class SharedAppBar extends StatelessWidget with PreferredSizeWidget {
+  SharedAppBar({
     Key? key,
     this.isImageTitle = false,
      this.title = '',

@@ -16,7 +16,7 @@ class OTTPScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShearedAppBar(
+      appBar: SharedAppBar(
         isBack: true,
         isImageTitle: true,
       ),
